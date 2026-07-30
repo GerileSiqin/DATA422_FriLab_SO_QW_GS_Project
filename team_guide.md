@@ -36,4 +36,4 @@ Please add your introduction here.
 Please add your introduction here.
 
 ### Gerile
-I am Gerile.
+I am Gerile. I am studying MADS at UC.
