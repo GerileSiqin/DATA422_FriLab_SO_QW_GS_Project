@@ -27,7 +27,7 @@ We will meet before the lab or online when needed.
 ## Introductions
 
 ### Sweeney
-My name is Sweeney. I am a Data201 student and this is my first semester starting my data science degree.
+My name is Sweeney. I am a Data201 student.
 
 ### Qi
 Please add your introduction here.
