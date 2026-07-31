@@ -30,7 +30,7 @@ We will meet before the lab or online when needed.
 My name is Sweeney. I am a Data201 student.
 
 ### Qi
-Please add your introduction here.
+I am Qi, I am a student of MADS.
 
 ### Joshua
 Please add your introduction here.
