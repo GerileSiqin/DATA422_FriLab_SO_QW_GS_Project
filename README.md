@@ -35,23 +35,44 @@ After cloning, you should see these files:
 - README.md
 - .gitignore
 - requirements.R
+- team_guide.md
+- DATA422_FriLab_SO_QW_GS_Project.Rproj
 
-## Information on "listings.csv" from Get the Data for June 2026
-- id -> Airbnb's unique identifier for the listing
-- name -> Name of the listing
-- host_id -> Airbnb's unique identifier for the host/user
-- host_name -> Name of the host. Usually just the first name(s).
-- neighborhood_group -> districts defined by the electoral map 
-- neighborhood -> The ward the listing is based in
-- latitude ->
-- longitude ->
-- room_type -> what type of room is advertised on the listing, eg: cabin, apartment, house
-- price -> price per night stayed
-- minimum_nights -> minimum number of nights stayed as advertised on the listing
-- number_of_reviews ->
-- last_review ->
-- reviews_per_month ->
-- calculated_host_listings_count -> The number of listings the host has in the current scrape, in the city/region geography.
-- availability_365 ->
-- number_of_reviews_ltm ->
-- license ->
+## Dataset information
+
+For Deliverable 2, we use the `listings.csv` dataset from Inside Airbnb.
+
+Dataset details:
+
+- Source: Inside Airbnb
+- File: `listings.csv`
+- Location: New Zealand
+- Month: June 2026
+- Storage: Stored locally on each team member's computer
+
+The dataset contains information about Airbnb listings in New Zealand.
+Each row represents one Airbnb listing.
+Each column describes one feature of that listing.
+
+Important columns:
+
+- `id`: unique identifier for each Airbnb listing
+- `name`: name of the listing
+- `host_id`: unique identifier for the host
+- `host_name`: name of the host
+- `neighborhood_group`: larger area or district, such as Christchurch
+- `neighborhood`: smaller local area of the listing
+- `latitude`: north-south coordinate of the listing location
+- `longitude`: east-west coordinate of the listing location
+- `room_type`: type of accommodation, such as entire apartment or private room
+- `price`: price per night stayed
+- `minimum_nights`: minimum number of nights required for booking
+- `number_of_reviews`: total number of reviews for the listing
+- `last_review`: date of the most recent review
+- `reviews_per_month`: average number of reviews per month
+- `calculated_host_listings_count` -> number of listings associated with the same host
+- `availability_365`: number of days the listing is available in the next 365 days
+- `number_of_reviews_ltm`: number of reviews in the last twelve months
+- `license`: licence or registration information, if available
+
+Note: Column meanings were interpreted using the Inside Airbnb Data Dictionary.
