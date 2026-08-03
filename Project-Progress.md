@@ -1,0 +1,10 @@
+# Project Progress
+
+## 3 August 2026 — Added Christchurch Airbnb workflow
+
+- Added `Airbnb-Christchurch-NZ.ows` to the project repository.
+- The file contains an Orange Data Mining workflow for exploring and analysing the Christchurch Airbnb dataset.
+- R remains the primary programming language for the overall project.
+- This Orange workflow uses Python as its embedded language and serves as a supplementary data-exploration resource.
+- The file is for testing the Orange app, so please feel free to add comments or make any changes.
+- Contributor: Qi Wang
