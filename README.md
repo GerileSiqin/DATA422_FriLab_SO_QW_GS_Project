@@ -76,3 +76,54 @@ Important columns:
 - `license`: licence or registration information, if available
 
 Note: Column meanings were interpreted using the Inside Airbnb Data Dictionary.
+
+## Project organisation update
+
+The repository has been organised into separate folders for each deliverable to make the project easier to navigate.
+
+### Current folder structure
+
+```text
+deliverable_1/
+  team_guide.md
+  qi_git_practice.md
+
+deliverable_2/
+  Airbnb-Christchurch-NZ.ows
+  Project-Progress.md
+  brave_price_plot.R
+```
+
+The main project files remain in the root folder:
+
+```text
+README.md
+.gitignore
+requirements.R
+```
+
+### What changed
+
+Deliverable 1 practice files were moved into the `deliverable_1/` folder.
+
+Deliverable 2 workflow and support files were moved into the `deliverable_2/` folder.
+
+The Airbnb dataset file `listings.csv` should still be stored locally on each team member's computer and should not be uploaded to GitHub.
+
+### How to update your local repository
+
+If you already cloned the repository to your computer, you do not need to clone it again.
+
+Open the project folder in RStudio and run these commands in the RStudio Terminal:
+
+```bash
+git checkout main
+git pull origin main
+```
+
+After pulling, your local repository should also show the new folders:
+
+```text
+deliverable_1/
+deliverable_2/
+```
