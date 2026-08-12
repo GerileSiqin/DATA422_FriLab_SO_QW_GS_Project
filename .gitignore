@@ -49,3 +49,6 @@ po/*~
 rsconnect/
 
 .DS_Store
+
+# Local Deliverable 3 backup files
+deliverable_3/Backup/

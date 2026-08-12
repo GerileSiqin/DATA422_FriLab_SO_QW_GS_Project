@@ -1,0 +1,9 @@
+column,non_missing_count,missing_count,unique_count,most_common_value,most_common_count
+month_year,3469,0,1,2026-06,3469
+source_file,3469,0,1,listings-NZ-June26.csv,3469
+name,3469,0,3444,Waterfront 2-Bedroom Harbour View Apartment,3
+host_name,3469,0,1073,Paula Kat Charlotte,176
+neighbourhood_group,3469,0,1,Christchurch City,3469
+neighbourhood,3469,0,16,Central Ward,1315
+room_type,3469,0,4,Entire home/apt,2735
+last_review,3154,315,443,2026-05-31,170
