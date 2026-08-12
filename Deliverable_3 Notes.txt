@@ -1,0 +1,49 @@
+Deliverable 3 - Work completed
+
+I added the Python script:
+deliverable_3/python_scripts/filter_christchurch_june26.py
+
+What the script does:
+
+1. Reads the June 2026 New Zealand Airbnb listings dataset from:
+   deliverable_3/Raw Data/listings-NZ-June26.csv
+
+2. Filters the dataset to keep Christchurch City listings only.
+
+3. Creates another Christchurch dataset containing listings whose last review
+   date is between 1 October 2025 and 30 June 2026.
+
+4. Adds a month_year column based on the last_review date.
+
+5. Produces data-quality and summary tables, including:
+   - missing-value counts and percentages
+   - numeric summary statistics (count, minimum, maximum, mean, and standard deviation)
+   - category counts for categorical columns
+
+6. Creates price-distribution histograms comparing:
+   - all New Zealand listings
+   - all Christchurch City listings
+   - Christchurch listings reviewed between October 2025 and June 2026
+
+7. Calculates the number of days since each Christchurch listing's last review,
+   using 19 June 2026 as the dataset scrape date, and creates a histogram.
+
+8. Finds the top 10% of New Zealand properties by number_of_reviews and checks
+   how many of those properties are in Christchurch City.
+
+Output locations:
+
+- Tables and filtered CSV files:
+  deliverable_3/outputs/analysis_tables/
+
+- Charts:
+  deliverable_3/outputs/analysis_plots/
+
+How to run the code from the repository root:
+
+python3 deliverable_3/python_scripts/filter_christchurch_june26.py
+
+Please pull the latest branch before editing, and check the generated tables
+and charts in the output folders before merging the work into main.
+
+***FYI, until 13th August 2026, the codes are just for practice, you are welcome to modify or provide improvement suggestions. I will review the codes at night of 13th August 2026.***

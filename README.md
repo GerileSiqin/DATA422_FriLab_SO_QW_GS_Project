@@ -1,4 +1,5 @@
 # DATA422_FriLab_SO_QW_GS_Project
+
 DATA422 group project repository for Friday lab
 
 ## What we have done so far
@@ -17,6 +18,8 @@ DATA422 group project repository for Friday lab
 3. Practise pull, commit, and push on the main branch.
 4. Practise creating branches and pushing to branches.
 5. Merge branches back into main.
+
+
 
 ### How to clone the repository
 
@@ -37,6 +40,8 @@ After cloning, you should see these files:
 - requirements.R
 - team_guide.md
 - DATA422_FriLab_SO_QW_GS_Project.Rproj
+
+
 
 ## Dataset information
 
@@ -102,6 +107,8 @@ README.md
 requirements.R
 ```
 
+
+
 ### What changed
 
 Deliverable 1 practice files were moved into the `deliverable_1/` folder.
@@ -126,4 +133,6 @@ After pulling, your local repository should also show the new folders:
 ```text
 deliverable_1/
 deliverable_2/
+deliverable_3/
 ```
+
