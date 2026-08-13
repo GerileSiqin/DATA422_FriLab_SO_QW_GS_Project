@@ -56,29 +56,42 @@ listings_by_month = (
 
 listings_by_month.columns = ["month_year", "listing_count"]
 
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(8, 6))
 
-plt.plot(
+# A time-series line requires several monthly source snapshots. The current
+# combined file contains only June 2026, so show the available snapshot as a
+# zero-based bar rather than implying a trend that the data cannot support.
+bars = plt.bar(
     listings_by_month["month_year"],
     listings_by_month["listing_count"],
-    marker="o"
+    color="#2878B5",
+    width=0.55,
 )
 
-# Add exact number above each dot.
-for x, y in zip(listings_by_month["month_year"], listings_by_month["listing_count"]):
+for bar in bars:
+    height = bar.get_height()
     plt.text(
-        x,
-        y,
-        str(y),
+        bar.get_x() + bar.get_width() / 2,
+        height,
+        f"{int(height):,}",
         ha="center",
-        va="bottom"
+        va="bottom",
     )
 
-plt.title("Christchurch Airbnb Listings by Month")
+plt.title("Christchurch Airbnb Listings in Available Monthly Snapshot")
+plt.figtext(
+    0.5,
+    0.91,
+    "Only the June 2026 source dataset is currently available",
+    ha="center",
+    fontsize=10,
+    color="#555555",
+)
 plt.xlabel("Month")
 plt.ylabel("Number of listings")
-plt.xticks(rotation=45)
-plt.tight_layout()
+plt.ylim(bottom=0)
+plt.grid(axis="y", alpha=0.2)
+plt.tight_layout(rect=[0, 0, 1, 0.90])
 
 output_file = PLOTS / "01_listings_by_month.png"
 plt.savefig(output_file, dpi=300)
@@ -255,6 +268,16 @@ review_data["days_since_last_review"] = (
     review_data["scrape_date"] - review_data["last_review"]
 ).dt.days
 
+# Reviews after the matching snapshot date produce negative elapsed days.
+# They cannot represent "days since" that snapshot, so exclude them from the
+# chart and its exported plot-data table.
+future_review_count = int((review_data["days_since_last_review"] < 0).sum())
+review_data = review_data[
+    review_data["days_since_last_review"].ge(0)
+].copy()
+
+print("Future-dated reviews excluded from Plot 4:", future_review_count)
+
 plt.figure(figsize=(10, 6))
 
 # plt.hist returns:
@@ -276,16 +299,18 @@ max_bin_right = bins[max_index + 1]
 
 # Add exact number above the highest bar.
 plt.text(
-    max_bar.get_x() + max_bar.get_width() / 2,
+    max_bar.get_x() + max_bar.get_width() * 0.15,
     max_count,
     str(max_count),
-    ha="center",
+    ha="left",
     va="bottom"
 )
 
 plt.title("Days Since Last Review for Christchurch Listings")
 plt.xlabel("Days since last review")
 plt.ylabel("Number of listings")
+plt.xlim(left=0)
+plt.grid(axis="y", alpha=0.2)
 plt.tight_layout()
 
 output_file = PLOTS / "04_days_since_last_review_distribution.png"
