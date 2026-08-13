@@ -44,28 +44,41 @@ print("Combined Christchurch dataset loaded.")
 print("Rows and columns:", df.shape)
 
 # ------------------------------------------------------------
-# 3. Plot 1: Listings by month
+# 3. Plot 1: Listings with a last review by month
 # ------------------------------------------------------------
 
+# Only the June 2026 listing snapshot is available. To show the requested
+# October 2025–June 2026 period without pretending that nine source snapshots
+# exist, count listings by the month of their most recent review.
+review_months = pd.period_range("2025-10", "2026-06", freq="M").astype(str)
+
+plot1_data = df.copy()
+plot1_data["last_review"] = pd.to_datetime(
+    plot1_data["last_review"], errors="coerce"
+)
+plot1_data = plot1_data[
+    plot1_data["last_review"].between("2025-10-01", "2026-06-30")
+].copy()
+plot1_data["review_month"] = (
+    plot1_data["last_review"].dt.to_period("M").astype(str)
+)
+
 listings_by_month = (
-    df["month_year"]
-    .value_counts()
-    .sort_index()
+    plot1_data.groupby("review_month")["id"]
+    .nunique()
+    .reindex(review_months, fill_value=0)
+    .rename_axis("review_month")
+    .rename("listing_count")
     .reset_index()
 )
 
-listings_by_month.columns = ["month_year", "listing_count"]
-
 plt.figure(figsize=(8, 6))
 
-# A time-series line requires several monthly source snapshots. The current
-# combined file contains only June 2026, so show the available snapshot as a
-# zero-based bar rather than implying a trend that the data cannot support.
 bars = plt.bar(
-    listings_by_month["month_year"],
+    listings_by_month["review_month"],
     listings_by_month["listing_count"],
     color="#2878B5",
-    width=0.55,
+    width=0.7,
 )
 
 for bar in bars:
@@ -78,16 +91,16 @@ for bar in bars:
         va="bottom",
     )
 
-plt.title("Christchurch Airbnb Listings in Available Monthly Snapshot")
+plt.title("Christchurch Listings with a Last Review by Month")
 plt.figtext(
     0.5,
     0.91,
-    "Only the June 2026 source dataset is currently available",
+    "October 2025–June 2026, based on the June 2026 listing snapshot",
     ha="center",
     fontsize=10,
     color="#555555",
 )
-plt.xlabel("Month")
+plt.xlabel("Month of last review")
 plt.ylabel("Number of listings")
 plt.ylim(bottom=0)
 plt.grid(axis="y", alpha=0.2)
