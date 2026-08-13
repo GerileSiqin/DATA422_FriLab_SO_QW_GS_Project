@@ -67,7 +67,7 @@ files = [
 # ------------------------------------------------------------
 
 # This empty list will store each month's Christchurch-only dataset.
-# Later, pandas will concatenate everything in this list.
+# Later, pandas will concatenate everything in this empty list.
 all_christchurch_data = []
 
 # ------------------------------------------------------------

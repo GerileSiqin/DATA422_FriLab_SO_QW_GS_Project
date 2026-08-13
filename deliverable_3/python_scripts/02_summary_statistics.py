@@ -1,8 +1,8 @@
 # 02_summary_statistics.py
 # Purpose:
 # Load the combined Christchurch Airbnb dataset,
-# calculate missing values, numeric summary statistics,
-# categorical counts, and useful project-specific summaries.
+# calculate missing values and numeric summary statistics,
+# and create useful project-specific summaries.
 #
 # Main output folder:
 # deliverable_3/outputs/summary_tables/
@@ -60,12 +60,20 @@ missing_summary.to_csv(missing_output, index=False)
 # 4. Numeric summary statistics
 # ------------------------------------------------------------
 
-# df.describe() calculates count, mean, std, min, quartiles, and max.
-# .T turns columns into rows so the table is easier to read.
-numeric_summary = df.describe().T
+# Only include numeric columns where summary statistics
+# such as mean, standard deviation, min and max are meaningful.
+numeric_columns = [
+    "price",
+    "minimum_nights",
+    "number_of_reviews",
+    "reviews_per_month",
+    "calculated_host_listings_count",
+    "availability_365",
+    "number_of_reviews_ltm"
+]
 
-# Add missing-value count to the numeric summary table.
-numeric_summary["missing_count"] = df.select_dtypes(include="number").isna().sum()
+# Calculate count, mean, std, min, quartiles, and max.
+numeric_summary = df[numeric_columns].describe().T
 
 print("\nNumeric summary statistics:")
 print(numeric_summary)
@@ -74,40 +82,7 @@ numeric_output = SUMMARY_TABLES / "numeric_summary_statistics.csv"
 numeric_summary.to_csv(numeric_output)
 
 # ------------------------------------------------------------
-# 5. Categorical summary statistics
-# ------------------------------------------------------------
-
-# Select text/category-like columns.
-categorical_columns = df.select_dtypes(include=["object"]).columns
-
-categorical_summaries = []
-
-for column in categorical_columns:
-    # Count each category, including missing values.
-    counts = df[column].value_counts(dropna=False).reset_index()
-
-    # Rename columns.
-    counts.columns = [column, "count"]
-
-    # Add original column name so all categorical summaries can be combined.
-    counts["column"] = column
-
-    # Reorder columns.
-    counts = counts[["column", column, "count"]]
-
-    categorical_summaries.append(counts)
-
-# Combine all categorical count tables into one file.
-categorical_summary = pd.concat(categorical_summaries, ignore_index=True)
-
-print("\nCategorical summary statistics:")
-print(categorical_summary.head(30))
-
-categorical_output = SUMMARY_TABLES / "categorical_summary_counts.csv"
-categorical_summary.to_csv(categorical_output, index=False)
-
-# ------------------------------------------------------------
-# 6. Useful project-specific summaries
+# 5. Useful project-specific summaries
 # ------------------------------------------------------------
 
 print("\nListings by month:")
@@ -120,7 +95,7 @@ print("\nNeighbourhood counts:")
 print(df["neighbourhood"].value_counts(dropna=False).head(20))
 
 # ------------------------------------------------------------
-# 7. Save useful project-specific summaries
+# 6. Save useful project-specific summaries
 # ------------------------------------------------------------
 
 # Listings by month

@@ -338,7 +338,7 @@ print("Total Christchurch listings with review counts:", len(reviews_data))
 print("Top 10% listings:", len(top_10_reviews))
 print("Cutoff number_of_reviews:", cutoff_reviews)
 
-# Count room types within the top 10% most-reviewed listings.
+# Count room types within the top 10% most-reviewed Chch listings.
 top_room_type_counts = (
     top_10_reviews["room_type"]
     .value_counts(dropna=False)
