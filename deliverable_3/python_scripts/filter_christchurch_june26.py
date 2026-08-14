@@ -237,20 +237,28 @@ def plot_price_histograms(
         "Christchurch: reviews Oct 2025–Jun 2026": filtered_chch,
     }
 
+    # Prices cannot be negative. Calculate the shared range from valid,
+    # non-negative NZ prices only, then apply the same rule to every dataset.
+    valid_nz_prices = pd.to_numeric(nz["price"], errors="coerce")
+    valid_nz_prices = valid_nz_prices[valid_nz_prices.ge(0)]
+
     # A few extreme prices compress the main distribution. Use a shared upper
-    # limit based on the 99th percentile of NZ price, and report the limit.
-    upper_limit = nz["price"].dropna().quantile(0.99)
+    # limit based on the 99th percentile of valid NZ prices, and report it.
+    upper_limit = valid_nz_prices.quantile(0.99)
     bins = np.linspace(0, upper_limit, 51)
 
     fig, axes = plt.subplots(1, 3, figsize=(16, 5), sharex=True)
     colors = ["#2563A5", "#D68A24", "#7A8B3A"]
 
     for axis, (label, data), color in zip(axes, datasets.items(), colors):
-        prices = data.loc[data["price"].between(0, upper_limit), "price"]
+        numeric_prices = pd.to_numeric(data["price"], errors="coerce")
+        prices = numeric_prices[numeric_prices.between(0, upper_limit)]
         axis.hist(prices, bins=bins, color=color, edgecolor="white")
         axis.set_title(label)
         axis.set_xlabel("Nightly price (NZD)")
         axis.set_ylabel("Number of listings")
+        axis.set_xlim(0, upper_limit)
+        axis.set_ylim(bottom=0)
         axis.grid(axis="y", alpha=0.2)
 
     fig.suptitle("Airbnb Price Distributions")
@@ -268,7 +276,8 @@ def plot_price_histograms(
     # different row counts can be compared fairly.
     fig, axis = plt.subplots(figsize=(10, 6))
     for (label, data), color in zip(datasets.items(), colors):
-        prices = data.loc[data["price"].between(0, upper_limit), "price"]
+        numeric_prices = pd.to_numeric(data["price"], errors="coerce")
+        prices = numeric_prices[numeric_prices.between(0, upper_limit)]
         axis.hist(
             prices,
             bins=bins,
@@ -282,6 +291,8 @@ def plot_price_histograms(
     axis.set_title("Airbnb Price Distributions: New Zealand and Christchurch")
     axis.set_xlabel("Nightly price (NZD)")
     axis.set_ylabel("Density")
+    axis.set_xlim(0, upper_limit)
+    axis.set_ylim(bottom=0)
     axis.grid(axis="y", alpha=0.2)
     axis.legend()
     fig.tight_layout()
@@ -301,11 +312,15 @@ def plot_days_since_last_review(chch: pd.DataFrame) -> None:
         SCRAPE_DATE - review_data["last_review"]
     ).dt.days
 
-    # Remove missing dates and impossible future-review values.
-    plot_data = review_data.loc[
-        review_data["days_since_last_review"].ge(0),
-        "days_since_last_review",
-    ]
+    # Remove missing dates and impossible future-review values from both the
+    # plots and the exported plot-data table.
+    invalid_review_count = int(
+        review_data["days_since_last_review"].lt(0).sum()
+    )
+    valid_review_data = review_data.loc[
+        review_data["days_since_last_review"].ge(0)
+    ].copy()
+    plot_data = valid_review_data["days_since_last_review"]
 
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 
@@ -313,6 +328,8 @@ def plot_days_since_last_review(chch: pd.DataFrame) -> None:
     axes[0].set_title("Complete distribution")
     axes[0].set_xlabel("Days since last review")
     axes[0].set_ylabel("Number of listings")
+    axes[0].set_xlim(left=0)
+    axes[0].set_ylim(bottom=0)
     axes[0].grid(axis="y", alpha=0.2)
 
     recent_data = plot_data[plot_data <= 365]
@@ -320,22 +337,25 @@ def plot_days_since_last_review(chch: pd.DataFrame) -> None:
     axes[1].set_title("Closer view: last 365 days")
     axes[1].set_xlabel("Days since last review")
     axes[1].set_ylabel("Number of listings")
+    axes[1].set_xlim(0, 365)
+    axes[1].set_ylim(bottom=0)
     axes[1].grid(axis="y", alpha=0.2)
 
     fig.suptitle("Days Since Last Review for Christchurch Listings")
     fig.text(
         0.5,
         0.01,
-        "Calculated from the 19 June 2026 scrape date; listings without a review are excluded",
+        "Calculated from the 19 June 2026 scrape date; missing or future-dated reviews are excluded",
         ha="center",
     )
     fig.tight_layout(rect=[0, 0.05, 1, 0.94])
     fig.savefig(OUTPUT_DIR / "03_days_since_last_review.png", dpi=300)
     plt.close(fig)
 
-    review_data.to_csv(
+    valid_review_data.to_csv(
         TABLE_DIR / "christchurch_with_days_since_last_review.csv", index=False
     )
+    print(f"Future-dated reviews excluded: {invalid_review_count:,}")
     print(f"Listings plotted for days since last review: {len(plot_data):,}")
 
 
