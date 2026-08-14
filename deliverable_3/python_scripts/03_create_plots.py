@@ -32,6 +32,19 @@ def save_plot(filename: str) -> Path:
     return output_file
 
 
+def add_bar_labels(bars) -> None:
+    """Add the integer height above each bar in a Matplotlib bar chart."""
+    for bar in bars:
+        height = bar.get_height()
+        plt.text(
+            bar.get_x() + bar.get_width() / 2,
+            height,
+            f"{int(height):,}",
+            ha="center",
+            va="bottom",
+        )
+
+
 # -----------------------------------------------------------------------------
 # 2. Load and validate the Christchurch dataset
 # -----------------------------------------------------------------------------
@@ -61,6 +74,18 @@ if missing_columns:
     raise ValueError(
         "Dataset is missing required columns: "
         + ", ".join(sorted(missing_columns))
+    )
+
+expected_months = set(
+    pd.period_range("2025-10", "2026-06", freq="M").astype(str)
+)
+observed_months = set(df["month_year"].dropna().astype(str).unique())
+missing_months = sorted(expected_months.difference(observed_months))
+
+if missing_months:
+    print(
+        "WARNING: Input dataset is missing monthly snapshots: "
+        + ", ".join(missing_months)
     )
 
 # Convert numeric fields.
@@ -132,16 +157,7 @@ bars = plt.bar(
 )
 
 # Add the exact number above each bar.
-for bar in bars:
-    height = bar.get_height()
-
-    plt.text(
-        bar.get_x() + bar.get_width() / 2,
-        height,
-        f"{int(height):,}",
-        ha="center",
-        va="bottom",
-    )
+add_bar_labels(bars)
 
 plt.title(
     "Christchurch Listings with a Last Review by Month"
@@ -189,16 +205,7 @@ bars = plt.bar(
     room_type_counts["count"]
 )
 
-for bar in bars:
-    height = bar.get_height()
-
-    plt.text(
-        bar.get_x() + bar.get_width() / 2,
-        height,
-        f"{int(height):,}",
-        ha="center",
-        va="bottom",
-    )
+add_bar_labels(bars)
 
 plt.title(
     "Christchurch Airbnb Listings by Room Type"
@@ -299,16 +306,7 @@ bars = plt.bar(
     price_group_counts["count"]
 )
 
-for bar in bars:
-    height = bar.get_height()
-
-    plt.text(
-        bar.get_x() + bar.get_width() / 2,
-        height,
-        f"{int(height):,}",
-        ha="center",
-        va="bottom",
-    )
+add_bar_labels(bars)
 
 plt.title(
     "Christchurch Airbnb Price Distribution"
@@ -490,6 +488,7 @@ review_data.to_csv(
 # Keep only rows with a valid review count.
 reviews_data = df[
     df["number_of_reviews"].notna()
+    & df["number_of_reviews"].ge(0)
 ].copy()
 
 if reviews_data.empty:
@@ -511,8 +510,8 @@ top_n = max(
 top_10_reviews = (
     reviews_data
     .sort_values(
-        "number_of_reviews",
-        ascending=False
+        ["number_of_reviews", "id"],
+        ascending=[False, True]
     )
     .head(top_n)
     .copy()
@@ -558,16 +557,7 @@ bars = plt.bar(
     top_room_type_counts["count"]
 )
 
-for bar in bars:
-    height = bar.get_height()
-
-    plt.text(
-        bar.get_x() + bar.get_width() / 2,
-        height,
-        f"{int(height):,}",
-        ha="center",
-        va="bottom",
-    )
+add_bar_labels(bars)
 
 plt.title(
     "Top 10% Most-Reviewed Christchurch Listings by Room Type"
