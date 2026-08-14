@@ -136,3 +136,30 @@ deliverable_2/
 deliverable_3/
 ```
 
+## Git Guide for Team Members
+
+Please follow this guide to avoid merge conflicts and accidentally overwriting another teammate’s work.
+
+---
+
+### 1. Why do merge conflicts happen?
+
+A merge conflict can happen when:
+
+- Two people edit the same lines in the same file.
+- Several people work directly on the `main` branch.
+- Someone starts working without downloading the latest changes.
+- A teammate pushes new commits while you are still working.
+- Both versions are accepted during a merge, creating duplicated code.
+
+> The best solution is for every teammate to work on a separate branch.
+
+---
+
+### 2. Before starting work
+
+First, make sure your local `main` branch is up to date:
+
+```bash
+git switch main
+git pull --ff-only origin main
