@@ -175,17 +175,20 @@ price_data = df[df["price"].notna()].copy()
 
 # Custom price groups.
 # np.inf means infinity, so the final group includes all prices >= 1000.
-price_bins = [0, 50, 100, 150, 200, 300, 500, 1000, np.inf]
+price_bins = [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950  1000, np.inf]
 
 price_labels = [
     "< 50",
-    "50–100",
-    "100–150",
-    "150–200",
-    "200–300",
-    "300–500",
-    "500–1000",
-    "≥ 1000"
+    "50–150",
+    "150–250",
+    "250–350",
+    "350–450",
+    "450–550",
+    "550–650",
+    "650-750",
+    "750-850",
+    "850-950,
+    "≥ 950"
 ]
 
 # pd.cut() converts numeric price values into price groups.
