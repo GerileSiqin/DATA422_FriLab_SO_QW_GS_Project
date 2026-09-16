@@ -2,6 +2,8 @@
 
 ## Christchurch Airbnb Dataset
 
+The Christchurch Airbnb dataset originally contained **28795 rows and 19 columns** and covered the period from **October 2025 to June 2026**.
+
 ### Cleaning script
 
 The initial inspection and cleaning code is in:
@@ -20,11 +22,42 @@ The script currently:
 
 ### Cleaning decisions
 
-Final cleaning decisions will be agreed on by the team after reviewing the inspection results.
+| Cleaning decision | Reason | Consequence |
+
+|---|---|---|
+
+| Checked for exact duplicate rows and removed duplicates if found | Duplicate rows could cause listings to be counted more than once | No exact duplicate rows were found, so **0 rows were removed** |
+
+| Kept `latitude` and `longitude` | These columns are required for Deliverable 4 and may be useful for location-based analysis | Both columns had no missing values, so **0 rows were removed** |
+
+| Removed `license` | All 28795 values were missing, so the column contained no usable information | **1 column removed**, 0 rows removed |
+
+| Removed `neighbourhood_group` | Every row contained the same value, `Christchurch City`, so the column did not provide additional information | **1 column removed**, 0 rows removed |
+
+| Removed `name`, `host_id` and `host_name` | These columns are not required for the planned comparison of rental prices and property availability | **3 columns removed**, 0 rows removed |
+
+| Removed `number_of_reviews`, `last_review`, `reviews_per_month` and `number_of_reviews_ltm` | Review-related information is not required for the planned analysis of rental prices and available properties | **4 columns removed**, 0 rows removed |
+
+| Kept missing `price` values | There were **10667 missing price values**. All listings in December 2025, January 2026 and February 2026 had missing prices. Removing these rows would remove three complete months and affect later analysis of property availability | **10667 missing values retained**, 0 rows removed |
+
+| Kept missing `minimum_nights` values | Only **37 values** were missing and `minimum_nights` is not essential for the planned comparison of rental prices and property availability | **37 missing values retained**, 0 rows removed |
+
+| Kept unusually high `price` values | The highest prices were inspected by sorting the dataset by `price` and reviewing the associated listing names and IDs. Although some prices were extremely high, they were associated with identifiable listings and there was insufficient evidence to classify them as data-entry errors. | **0 rows removed** |
+
+| Kept `id`, `neighbourhood`, `latitude`, `longitude`, `room_type`, `price`, `minimum_nights`, `calculated_host_listings_count`, `availability_365` and `month_year` | These columns are useful for identifying listings, comparing locations, analysing prices and examining property availability over time | Final dataset contains **10 columns** |
 
 ### Cleaning outcome
 
-To be completed after the team finalises the cleaning decisions.
+- Original dataset: **28795 rows and 19 columns**
+- Final dataset: **28795 rows and 10 columns**
+- Rows removed: **0**
+- Columns removed: **9**
+- Exact duplicate rows removed: **0**
+- Missing `price` values retained: **10667** 
+- Missing price values were retained because three complete months had no price data.
+- Missing `minimum_nights` values retained: **37**
+
+The cleaning process was designed to preserve the information needed for the next stage of the project, where the Airbnb data will be combined with rental bond data to compare **rental prices** and **property availability** over the same time period.
 
 ---
 
@@ -63,8 +96,36 @@ Additional column descriptions will be added after inspecting the downloaded dat
 
 ### Cleaning decisions
 
-To be completed after inspecting the dataset.
+| Cleaning decision | Reason | Consequence |
+
+|---|---|---|
+
+| Filtered the dataset to `2025-10-01`, `2026-01-01`, and `2026-04-01` | These three quarterly periods cover the same overall period as the Christchurch Airbnb dataset, from October 2025 to June 2026 | Rows outside the target period were removed: **198868 rows** |
+
+| Kept `TimeFrame` | This field is required for Deliverable 4 and is needed to compare the bond data over time | Column retained |
+
+| Kept `Location Id` | This field is required for Deliverable 4 and it shows which quarter each row belongs to and is needed to compare the data across the three quarters | Column kept |
+
+| Removed rows with missing `Location Id` | `Location Id` is needed to identify the geographic area of each row. Without it, the row cannot be confidently matched to the correct area in the Airbnb dataset | Rows with missing `Location Id` were removed: **94 rows** |
+
+| Kept missing `Number Of Beds` values | Some dwelling types have missing `Number Of Beds` values repeatedly, suggesting that the bedroom number was not recorded for those categories rather than being accidentally missed | Missing values were kept: **876 values** |
+
+| Kept missing `Median Rent` values | Some values may be intentionally hidden for privacy. Replacing them would require guessing, and removing the rows would also discard other useful data | Missing `Median Rent` values were kept. After filtering and removing rows with missing `Location Id`, **0 missing `Median Rent` values remained** |
+
+| Kept all 12 columns | All columns may still be useful for later comparison of rental prices and rental market activity | No columns were removed at this stage |
+
+| Checked for exact duplicate rows | If the same row appears more than once, the same data could be counted more than once and lead to incorrect totals or misleading results | No exact duplicate rows were found: **0 rows removed** |
 
 ### Cleaning outcome
 
-To be completed after cleaning process completed.
+- Original dataset: **226080 rows and 12 columns**
+- Rows remaining after filtering to the three selected quarters:: **27212**
+- Rows removed outside the target period: **198868**
+- Rows removed because `Location Id` was missing: **94**
+- Final cleaned dataset: **27118 rows and 12 columns**
+- Exact duplicate rows removed: **0**
+- Missing `Number Of Beds` values retained: **876**
+- Missing `Median Rent` values remaining: **0**
+- Columns removed: **0**
+
+The final cleaned dataset contains only the three quarterly periods that match the Airbnb dataset and retains the information needed for later comparison of rental prices and rental market activity.
