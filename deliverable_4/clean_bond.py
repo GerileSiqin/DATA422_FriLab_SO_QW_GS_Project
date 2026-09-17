@@ -16,17 +16,14 @@ Date: 17 September 2026
 
 import pandas as pd
 from pathlib import Path
+from input_path import ask_csv_path
 
 
 # --------------------------------------------------
 # 1. Set the folders
 # --------------------------------------------------
 
-project_folder = Path(
-    r"E:\Courses\DATA422\Repository_DATA422"
-    r"\DATA422_FriLab_SO_QW_GS_Project"
-    r"\deliverable_4"
-)
+project_folder = Path(__file__).resolve().parent
 
 raw_data_folder = project_folder / "bond_data_raw"
 
@@ -35,7 +32,10 @@ raw_data_folder = project_folder / "bond_data_raw"
 # 2. Set the original CSV file
 # --------------------------------------------------
 
-input_file = raw_data_folder / "bond_data_jan2020_apr2026.csv"
+input_file = ask_csv_path(
+    raw_data_folder / "Detailed-Quarterly-Tenancy-Q1-2020-Q3-2026.csv",
+    "rental bond",
+)
 
 print("Input file:")
 print(input_file)

@@ -3,7 +3,7 @@ Inspect and begin cleaning the Christchurch listing dataset
 for DATA422 Deliverable 4.
 
 This script:
-1. Sets the folder containing the dataset.
+1. Sets the output folder for the cleaned dataset.
 2. Sets the original CSV file.
 3. Reads the dataset.
 4. Inspects rows, columns, data types, and missing values.
@@ -20,24 +20,27 @@ Date: 16 September 2026
 
 import pandas as pd
 from pathlib import Path
+from input_path import ask_csv_path
 
 
 # --------------------------------------------------
-# 1. Set the folder containing the dataset
+# 1. Set the output folder for the cleaned dataset
 # --------------------------------------------------
 
-data_folder = Path(
-    r"E:\Courses\DATA422\Repository_DATA422"
-    r"\DATA422_FriLab_SO_QW_GS_Project"
-    r"\deliverable_4\data_processed"
-)
+data_folder = Path(__file__).resolve().parent / "data_processed"
 
 
 # --------------------------------------------------
 # 2. Set the original CSV file
 # --------------------------------------------------
 
-input_file = data_folder / "christchurch_airbnb_oct2025_jun2026.csv"
+default_input_file = (
+    Path(__file__).resolve().parents[1]
+    / "deliverable_3"
+    / "data_processed"
+    / "christchurch_airbnb_cleaned.csv"
+)
+input_file = ask_csv_path(default_input_file, "Christchurch Airbnb")
 
 print("Input file:")
 print(input_file)
@@ -261,6 +264,7 @@ print(f"Number of columns: {len(df.columns)}")
 
 output_file = data_folder / "christchurch_listings_clean.csv"
 
+output_file.parent.mkdir(parents=True, exist_ok=True)
 df.to_csv(output_file, index=False)
 
 print("\nCleaned dataset saved as:")

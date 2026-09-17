@@ -1,0 +1,81 @@
+{
+  "surface": "report",
+  "title": "Deliverable 4 \u2014 Activities and outcomes",
+  "generatedAt": "2026-09-17T08:19:01.179198+00:00",
+  "status": "observed",
+  "buildStatus": "complete",
+  "filters": [],
+  "queries": {
+    "cleaning_results": {
+      "rows": [
+        {
+          "dataset": "Airbnb",
+          "stage": "Input",
+          "rows": 3469,
+          "columns": 23
+        },
+        {
+          "dataset": "Airbnb",
+          "stage": "Saved output",
+          "rows": 3469,
+          "columns": 14
+        },
+        {
+          "dataset": "Rental bond",
+          "stage": "Input",
+          "rows": 226080,
+          "columns": 12
+        },
+        {
+          "dataset": "Rental bond",
+          "stage": "Selected quarters",
+          "rows": 27212,
+          "columns": 12
+        },
+        {
+          "dataset": "Rental bond",
+          "stage": "Saved output",
+          "rows": 27118,
+          "columns": 12
+        }
+      ],
+      "source": {
+        "type": "local-files",
+        "files": [
+          "deliverable_3/data_processed/christchurch_airbnb_cleaned.csv",
+          "deliverable_4/data_processed/christchurch_listings_clean.csv",
+          "deliverable_4/bond_data_raw/Detailed-Quarterly-Tenancy-Q1-2020-Q3-2026.csv",
+          "deliverable_4/bond_data_processed/bond_data_clean.csv",
+          "deliverable_4/clean_listings.py",
+          "deliverable_4/clean_bond.py",
+          "deliverable_4/README.md",
+          "deliverable_3/outputs/cleaning/data_cleaning_report.csv"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "Read local CSVs",
+            "detail": "Loaded input and saved CSVs with project Python and pandas on 17 September 2026."
+          },
+          {
+            "title": "Verify transformations",
+            "detail": "Airbnb: remove exact duplicates and nine named columns. Bond: select three TimeFrame values and drop missing Location Id. pandas.assert_frame_equal passed for both saved outputs."
+          },
+          {
+            "title": "Activity report scope",
+            "detail": "Script inspection and local saved outputs; source README compared with current counts. No external source verification or combined analysis claimed."
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Rows",
+            "definition": "Number of records at each cleaning stage; bond rows are aggregated records, not individual tenancies.",
+            "componentIds": [
+              "activity-report"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "id": "report:ac732ded-14fa-46e3-aa68-bb8793437dc9"
+}

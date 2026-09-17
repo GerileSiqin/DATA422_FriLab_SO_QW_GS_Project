@@ -1,5 +1,30 @@
 # Deliverable 4
 
+## Choose a local input file
+
+Run either cleaning script from the project root in a terminal:
+
+```bash
+python deliverable_4/clean_bond.py
+python deliverable_4/clean_listings.py
+```
+
+Each script asks for an input path before reading data. Paste the full path to
+your CSV file, or enter its folder path to use the default filename in that
+folder. Press Enter to use the displayed default, or type `q` to cancel.
+Invalid paths prompt you to try again. Paths containing spaces, surrounding
+quotes, and `~` for your home directory are supported.
+
+This is a terminal text prompt, not a separate graphical window. In VS Code,
+use **Run Python File in Terminal** so you can type a response.
+
+The listings input must have the same columns as the combined Christchurch
+dataset from Deliverable 3 (`christchurch_airbnb_cleaned.csv`). The bond input
+must use the expected rental bond CSV structure. Choosing a file changes its
+location only; it does not change the cleaning rules or expected columns.
+Cleaned outputs are still saved under `deliverable_4/data_processed` and
+`deliverable_4/bond_data_processed`, respectively.
+
 ## Christchurch Airbnb Dataset
 
 The Christchurch Airbnb dataset originally contained **28795 rows and 19 columns** and covered the period from **October 2025 to June 2026**.
@@ -129,3 +154,11 @@ Additional column descriptions will be added after inspecting the downloaded dat
 - Columns removed: **0**
 
 The final cleaned dataset contains only the three quarterly periods that match the Airbnb dataset and retains the information needed for later comparison of rental prices and rental market activity.
+
+Quote from Tenancy Services (https://www.tenancy.govt.nz/about-tenancy-services/data-and-statistics/rental-bond-data/)
+Important:
+Rental bond data migration to the new bond management system continues and therefore data remains in a provisional state at this time. Data is sourced from both legacy and new systems and may be incomplete or revised.
+
+Reported figures may reflect system changes, data reclassification, and methodology updates rather than underlying trends. Recent data may not be directly comparable with earlier periods. There are 17,550 more active bonds because the two systems recorded the information differently. We are undertaking further data validation, clean-up, and methodology refinement to ensure consistency and accuracy of reporting going forward.
+
+Users should exercise caution when comparing recent data releases with earlier periods, as these may not be directly comparable due to the impacts of migration and ongoing data normalisation. We will provide further information as this work continues.
