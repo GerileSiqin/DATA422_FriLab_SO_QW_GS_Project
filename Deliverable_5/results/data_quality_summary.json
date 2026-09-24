@@ -1,0 +1,11 @@
+{
+  "airbnb_rows": 3469,
+  "unique_listing_ids": 3469,
+  "duplicate_listing_ids": 0,
+  "sa2_matches": 3469,
+  "sa2_match_rate": 1.0,
+  "bond_join_matches": 2673,
+  "bond_join_match_rate": 0.7705390602479101,
+  "price_missing": 274,
+  "central_listing_count": 117
+}
