@@ -1,0 +1,39 @@
+{
+  "checks": {
+    "inputs_unchanged_after_run": true,
+    "pipeline_output_fingerprints_match": true,
+    "all_174_prior_location_statistics_preserved": true,
+    "all_prior_joined_values_preserved": true,
+    "all_six_sqlite_tables_equal_csv_contents": true,
+    "ranking_uses_observed_gap_denominator": true,
+    "edge_tests_passed": true
+  },
+  "excluded_from_ranking": [
+    {
+      "area_name": "Bryndwr South",
+      "airbnb_count": 5,
+      "gap_listing_count": 4
+    },
+    {
+      "area_name": "Queenspark",
+      "airbnb_count": 5,
+      "gap_listing_count": 4
+    },
+    {
+      "area_name": "Avonside",
+      "airbnb_count": 6,
+      "gap_listing_count": 4
+    },
+    {
+      "area_name": "Sydenham West",
+      "airbnb_count": 7,
+      "gap_listing_count": 4
+    }
+  ],
+  "old_eligible_locations": 95,
+  "new_eligible_locations": 91,
+  "highest_rounded_gap_locations": [
+    "Wigram North",
+    "Holmwood"
+  ]
+}

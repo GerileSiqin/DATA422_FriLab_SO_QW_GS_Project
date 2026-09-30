@@ -1,0 +1,24 @@
+test_complete_cache_needs_no_api_key_or_query (test_pipeline.CacheTests.test_complete_cache_needs_no_api_key_or_query) ... ok
+test_duplicate_cache_keys_fail (test_pipeline.CacheTests.test_duplicate_cache_keys_fail) ... ok
+test_failed_cache_is_not_treated_as_completed (test_pipeline.CacheTests.test_failed_cache_is_not_treated_as_completed) ... ok
+test_failed_cache_retries_in_live_mode (test_pipeline.CacheTests.test_failed_cache_retries_in_live_mode) ... ok
+test_timeout_is_safe_and_does_not_access_reason_attribute (test_pipeline.CacheTests.test_timeout_is_safe_and_does_not_access_reason_attribute) ... ok
+test_arithmetic_corruption_is_detected (test_pipeline.TransformationTests.test_arithmetic_corruption_is_detected) ... ok
+test_breakdowns_are_not_summed (test_pipeline.TransformationTests.test_breakdowns_are_not_summed) ... ok
+test_duplicate_bond_keys_fail (test_pipeline.TransformationTests.test_duplicate_bond_keys_fail) ... ok
+test_duplicate_listing_keys_fail (test_pipeline.TransformationTests.test_duplicate_listing_keys_fail) ... ok
+test_expanded_join_is_detected (test_pipeline.TransformationTests.test_expanded_join_is_detected) ... ok
+test_invalid_dates_fail (test_pipeline.TransformationTests.test_invalid_dates_fail) ... ok
+test_invalid_numeric_price_fails (test_pipeline.TransformationTests.test_invalid_numeric_price_fails) ... ok
+test_invalid_quarter_start_fails (test_pipeline.TransformationTests.test_invalid_quarter_start_fails) ... ok
+test_join_and_independent_hand_calculation (test_pipeline.TransformationTests.test_join_and_independent_hand_calculation) ... ok
+test_matched_row_with_missing_rent_is_distinct (test_pipeline.TransformationTests.test_matched_row_with_missing_rent_is_distinct) ... ok
+test_minimum_requires_observed_gaps (test_pipeline.TransformationTests.test_minimum_requires_observed_gaps) ... ok
+test_missing_price_is_preserved (test_pipeline.TransformationTests.test_missing_price_is_preserved) ... ok
+test_multiple_snapshots_within_quarter_fail (test_pipeline.TransformationTests.test_multiple_snapshots_within_quarter_fail) ... ok
+test_quarters_remain_separate (test_pipeline.TransformationTests.test_quarters_remain_separate) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.104s
+
+OK

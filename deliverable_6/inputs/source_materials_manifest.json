@@ -1,0 +1,46 @@
+[
+  {
+    "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/deliverable_3/python_scripts/01b_clean_christchurch_data.py",
+    "sha256": "03748c05678fbf89115e28ed86cf79f60b1109be011e953396e66477df78bbc2"
+  },
+  {
+    "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/deliverable_3/python_scripts/01_prepare_christchurch_dataset.py",
+    "sha256": "86327c593387a21eb688a7c6b6fe4a7cb623b88ad1ce8d85694ab2f061de7efa"
+  },
+  {
+    "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/deliverable_4/clean_listing_qi.py",
+    "sha256": "88d03916461c4e0ae923daaf601bf65464fedbebdb083e3d00e4bee3291079df"
+  },
+  {
+    "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/deliverable_4/clean_bond_qi.py",
+    "sha256": "4d0d9fa6c16e90fcb611e22521733d09cc105179682fc697a0e07b01659f48c0"
+  },
+  {
+    "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/Deliverable_5/run_deliverable_5.py",
+    "sha256": "b0222f52b87e84dab5a45e6bade2976d7879b9a85b8f5be6efa46bc85923f20e"
+  },
+  {
+    "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/Deliverable_5/README.md",
+    "sha256": "4960e72e703834bcbb962be080ff7ffcf15da6843b80a86351f69beb476049de"
+  },
+  {
+    "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/deliverable_3/data_processed/christchurch_airbnb_cleaned.csv",
+    "sha256": "1768204d103d20084d745da7aceee4900d2432e30d6ec7adcdb00b321a6ddf3c"
+  },
+  {
+    "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/deliverable_4/bond_data_processed/bond_data_clean_qi.csv",
+    "sha256": "b06f6c0b9fa2dc0272061be38cd376a65704caf0a3cd73807cfe09210d38be45"
+  },
+  {
+    "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/Deliverable_5/results/koordinates_coordinate_cache.csv",
+    "sha256": "fa0fc2bbf7e56b3b652190f77007eeb0d823a2076c46f47747416c39d998fa82"
+  },
+  {
+    "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/deliverable_6/example-automated-pipeline.zip",
+    "sha256": "85683738b27ed611bc04b029ddd34e0a1b2886989b05f64fadcf1f4e1b504e25"
+  },
+  {
+    "path": "/Users/archieg/.codex/.chatgpt-projects/g-p-6a66f23fe16c8191a1dc4420ad2f43b1/sources/Data Wrangling W03_DATA201_422_pipeline_modularity.pdf",
+    "sha256": "6cf1a100193ac41c9550b544083ce7e10e073f4beb395a476c9ff97aafed23b0"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "ai_disclosed": true,
+  "four_required_design_sections": true,
+  "derived_results_from_verified_run": true,
+  "source_documents_preserved": true,
+  "input_paths_match_runner_defaults": true,
+  "reviewed_sources_unchanged": true,
+  "test_count": 19,
+  "analytical_checks": 10,
+  "highest_gap_rounded": 242.71
+}

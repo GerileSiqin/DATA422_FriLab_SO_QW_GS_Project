@@ -1,0 +1,84 @@
+{
+  "created_at_utc": "2026-09-30T10:59:44.478198+00:00",
+  "inputs": {
+    "airbnb": {
+      "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/deliverable_3/data_processed/christchurch_airbnb_cleaned.csv",
+      "sha256": "1768204d103d20084d745da7aceee4900d2432e30d6ec7adcdb00b321a6ddf3c"
+    },
+    "bonds": {
+      "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/deliverable_4/bond_data_processed/bond_data_clean_qi.csv",
+      "sha256": "b06f6c0b9fa2dc0272061be38cd376a65704caf0a3cd73807cfe09210d38be45"
+    },
+    "sa2_cache": {
+      "path": "/Users/archieg/Desktop/MADS/DATA422 Data Wrangling/05-Assignment/DATA422_FriLab_SO_QW_GS_Project/deliverable_6/inputs/koordinates_coordinate_cache.csv",
+      "sha256": "fa0fc2bbf7e56b3b652190f77007eeb0d823a2076c46f47747416c39d998fa82"
+    }
+  },
+  "settings": {
+    "allow_network": false,
+    "workers": 8,
+    "minimum_priced_listings": 5,
+    "sa2_layer_id": 123515,
+    "days_per_week": 7,
+    "join_keys": [
+      "area_code",
+      "bond_time"
+    ]
+  },
+  "software": {
+    "python": "3.14.7",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "matplotlib": "3.11.1"
+  },
+  "code_sha256": {
+    "pipeline/__init__.py": "8a6bc4d7d66d80538949babd713b1f4d2f39a8f6f1387c84b1f8268d6c3f8a01",
+    "pipeline/config.py": "dc31b3ff1a20f5c2181e7ca52ae8deff095071b3e3e9b8bdee74d89e7c8646c1",
+    "pipeline/geography.py": "2d71503ac151b017563285009ac92772402eb62ed1b02c76a2380d4b884f9f7b",
+    "pipeline/outputs.py": "947c2993682fc9cced3cf77f82936ef1dbd8d8552da5bb0d323f493817b3fc2b",
+    "pipeline/transforms.py": "3ee1b1057aa3bc7f96bf434d4a2d17d983e9c0d58730b5cf201401105d826949",
+    "pipeline/validation.py": "8ac5783fd8b37eeabf10ea64bf00f8b32dc4a855b85fdc4686534ce971d2522c",
+    "run_pipeline.py": "1f6fc06f06bb1953a65a7cc5a3c8c32602cd745308f62bac7a91b334fa669bf9",
+    "sanity_check_example.py": "0baea661ba30de54738e6fe059d8413bd513a24d96ec9565a2b0af3ee9e562e2",
+    "tests/test_pipeline.py": "92a3fb5f9feda3eec0389cc9084c45ff47d7c33b5c2b6dc6646a217f62e2c859",
+    "tools/build_documents.py": "71aa668049f24f51144349bfa6472817cf6419dcfcf149323c95e11ac2a607d8",
+    "tools/verify_delivery.py": "712cfc6cea3161fbdc064fea9d5c288d9b354344d24609577d55aab834cf299b"
+  },
+  "outputs": {
+    "koordinates_coordinate_cache.csv": "fa0fc2bbf7e56b3b652190f77007eeb0d823a2076c46f47747416c39d998fa82",
+    "deliverable_6.sqlite": "fc13bb09a3f7025a41cfc9765653980dde9cc0ae21fcab069edce912815fc2e6",
+    "analysis_summary.md": "f4bf815a1025d70f58d721c0bbd29541d3c6187aa9d645ea4ca26c768281d396",
+    "data_quality_summary.json": "fe4419a1dd68536a8aa9669b954757a1d44ae17bfbddd818988f85133f2a4fb2",
+    "data_processed/airbnb_bond_joined.csv": "c616991a14e977bee91486a89c7d09de8ca320ecf512ff8c84fe86ddde318165",
+    "data_processed/airbnb_enriched.csv": "5132020b8c35c4d65fb8da9e10c977ff861db584194b83a8860d3d9b1f198e57",
+    "data_processed/airbnb_prepared.csv": "5f8335da6a506109b72d1e8938dd329c1b890393af9e59710204ee8ca0a63fa9",
+    "data_processed/bond_location_quarter.csv": "36b57c6c562926962b1125602f6389f8f3352e8acf408533efec513eb60dbeb5",
+    "data_processed/largest_gap_locations.csv": "56d7cc8a5511d8ab5f979d1bf9c6d89f7bed6d88190dad2d7b07f40edee9379f",
+    "data_processed/location_comparison.csv": "e5f5e25676b93a51ee3f18d2191b0eeba537b9cdb95146c79cc034f97d6c4710",
+    "plots/01_largest_price_gaps_2026-04-01.png": "ea58a8a5312d9428a421429797db994d939139bfe0e705fbef803208757f31ea",
+    "plots/02_property_counts_2026-04-01.png": "f99572deff43b854ef28ed03eab2f473d12cfd4ac02a2568c1a8785708432d3e"
+  },
+  "quality": {
+    "checks": {
+      "left_join_preserves_row_count": true,
+      "left_join_preserves_listing_snapshot_keys": true,
+      "no_duplicate_listing_snapshot_keys": true,
+      "summary_counts_reconcile": true,
+      "summary_gap_counts_reconcile": true,
+      "snapshot_maps_to_containing_quarter": true,
+      "weekly_to_nightly_units": true,
+      "nightly_gap_arithmetic": true,
+      "unmatched_bonds_remain_missing": true,
+      "sqlite_joined_row_count": true
+    },
+    "airbnb_rows": 3469,
+    "joined_rows": 3469,
+    "priced_listings": 3195,
+    "missing_prices": 274,
+    "sa2_matches": 3469,
+    "bond_row_matches": 2673,
+    "bond_rent_matches": 2673,
+    "usable_price_gaps": 2474,
+    "location_quarter_groups": 174
+  }
+}

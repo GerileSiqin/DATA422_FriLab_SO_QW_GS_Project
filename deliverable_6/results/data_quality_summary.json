@@ -1,0 +1,23 @@
+{
+  "checks": {
+    "left_join_preserves_row_count": true,
+    "left_join_preserves_listing_snapshot_keys": true,
+    "no_duplicate_listing_snapshot_keys": true,
+    "summary_counts_reconcile": true,
+    "summary_gap_counts_reconcile": true,
+    "snapshot_maps_to_containing_quarter": true,
+    "weekly_to_nightly_units": true,
+    "nightly_gap_arithmetic": true,
+    "unmatched_bonds_remain_missing": true,
+    "sqlite_joined_row_count": true
+  },
+  "airbnb_rows": 3469,
+  "joined_rows": 3469,
+  "priced_listings": 3195,
+  "missing_prices": 274,
+  "sa2_matches": 3469,
+  "bond_row_matches": 2673,
+  "bond_rent_matches": 2673,
+  "usable_price_gaps": 2474,
+  "location_quarter_groups": 174
+}
