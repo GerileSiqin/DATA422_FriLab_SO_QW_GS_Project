@@ -163,3 +163,153 @@ First, make sure your local `main` branch is up to date:
 ```bash
 git switch main
 git pull --ff-only origin main
+
+# DATA422 Deliverable 5 — Airbnb and tenancy bond integration
+
+This folder reproduces the Stats NZ SA2 lookup, Airbnb enrichment, quarterly bond join, analysis, plots, and SQLite database.
+
+## Data and API choices
+
+- Stats NZ layer: [Statistical Area 2 2026](https://datafinder.stats.govt.nz/layer/123515-statistical-area-2-2026/)
+- Koordinates layer ID: **123515**
+- Query endpoint: `https://koordinates.com/services/query/v1/vector.json`
+- Area fields: `SA22026_V1_00` and `SA22026_V1_00_NAME`
+- Geographic areas reference: [Geographic Areas Table 2023](https://datafinder.stats.govt.nz/table/111243-geographic-areas-table-2023/)
+
+## Run in the VS Code terminal
+
+From the repository root:
+
+```bash
+source .venv/bin/activate
+export KOORDINATES_API_KEY="your_key_here"
+python Deliverable_5/01_test_koordinates_query.py
+python Deliverable_5/run_deliverable_5.py --workers 8
+```
+
+The batch uses threads because the workload is network I/O, not CPU computation. This provides concurrent queries without the process-creation overhead of multiprocessing. The cache makes the run restartable.
+
+## Outputs
+
+- `data_processed/christchurch_airbnb_with_sa2.csv`: Airbnb data with SA2 code/name
+- `data_processed/bond_location_quarter_totals.csv`: one bond total per SA2-quarter
+- `data_processed/airbnb_bond_joined.csv`: left-joined analytical dataset
+- `deliverable_5.sqlite`: prepared data and SQL-joined table
+- `results/location_comparison.csv`: counts, rents, prices, and gaps by SA2
+- `results/largest_gap_locations.csv`: top gap locations with at least five listings
+- `results/data_quality_summary.json`: enrichment/join coverage checks
+- `results/analysis_summary.md`: written answers and assumptions
+- `results/plots/`: analysis plots
+
+## Trello reflection prompt
+
+Update the team board with completed cards for API validation, SA2 enrichment, the time/location join, SQLite, quality checks, and GitHub publication. In the reflection, discuss the benefit of testing one query first, using a resumable cache, choosing the correct quarterly grain, and avoiding double counting in the bond breakdowns. Add remaining review/presentation work as named cards with owners and due dates.
+
+**Active long-term bonds** are the number of active tenancy bonds recorded for long-term rentals in an area. In New Zealand, a bond is money lodged with Tenancy Services when a tenant rents a property. Here, `Active Bonds` is used as the closest available proxy for the number of long-term rental properties.
+
+**Airbnb listings** are the short-term accommodation listings found in the Airbnb snapshot. They may represent entire homes, apartments, or individual rooms.
+
+**Why compare them?**
+
+The figure places both measures side by side by Statistical Area 2 to compare:
+
+- the scale of short-term accommodation activity; and
+- the scale of the conventional long-term rental market.
+
+It helps identify locations where Airbnb listings are especially concentrated relative to long-term rentals.
+
+**What the figure shows**
+
+- Yellow bars: active long-term tenancy bonds.
+- Blue bars: Airbnb listings.
+- The figure displays the 20 locations with the most Airbnb listings.
+- A much larger yellow bar means the area has many more long-term rentals than Airbnb listings.
+- A relatively large blue bar means Airbnb activity is substantial compared with the local long-term rental market.
+
+The figure is useful for showing geographic patterns, but it does **not** prove that Airbnb listings cause fewer long-term rentals. The measures have different definitions: one bond does not necessarily equal one unique property, and one Airbnb listing may be a room or an entire property. Also, some areas have no matched bond data, so missing yellow bars should not automatically be interpreted as zero rentals.
+
+Raw Airbnb data
+    │
+    │ clean
+    ▼
+Clean Airbnb data
+(latitude, longitude, price, time...)
+    │
+    │ Koordinates API
+    ▼
+Add Stats NZ area/location ID
+    │
+    ▼
+Enriched Airbnb data
+(area_id, price, time...)
+    │
+    │
+    │ JOIN on:
+    │ area_id + time
+    │
+    ├───────────────────────┐
+    │                       │
+    ▼                       ▼
+Airbnb data            Bond/rental data
+(short-term)           (long-term)
+    │                       │
+    └──────────┬────────────┘
+               ▼
+        Combined dataset
+               │
+               ▼
+        Compare rental markets
+               │
+        ┌──────┼───────────┐
+        ▼      ▼           ▼
+     Median   Price       Number of
+     price    gaps        properties
+
+DATA422 Deliverable 6
+This folder contains a reviewed and executed revision of the Deliverable 5 comparison pipeline, high-level change notes, a sanity-check demonstration, and AI-assisted design principles. Earlier deliverables and the supplied example-automated-pipeline.zip remain unchanged.
+
+Start with the documents
+docs/Design_Principles.docx: editable Word document covering the four required areas and identifying OpenAI ChatGPT through Codex as the AI used.
+docs/Coding_Review_and_Sanity_Check.docx: high-level changes and reasons, intentional result changes, and a worked sanity check for the tutor.
+Equivalent Markdown versions are stored alongside them.
+Inputs and scope
+The default inputs are ../deliverable_3/data_processed/christchurch_airbnb_cleaned.csv and ../deliverable_4/bond_data_processed/bond_data_clean_qi.csv. The Airbnb input retains snapshot_date, which the narrower Deliverable 4 Qi listing file drops. The revised pipeline validates prepared data and reproduces enrichment, joining, analysis and export; it does not rebuild the previous raw-data cleaning stages.
+
+inputs/koordinates_coordinate_cache.csv is a byte-preserved copy of the existing Deliverable 5 cache. Offline mode is the default and needs no API key. inputs/source_materials_manifest.json records the reviewed input and reference fingerprints. The supplied lecture supports modularity, descriptive functions, explicit data flow, project-relative paths and scripted changes. The supplied automated-pipeline ZIP demonstrates staged automation, configuration and inspectable outputs.
+
+Reproduce
+Use Python 3.14 and an environment with the versions in requirements.txt (the actual analysis versions are also recorded in results/run_manifest.json). The document builder additionally needs python-docx.
+
+From this folder:
+
+python3 -m pip install -r requirements.txt
+make
+For an existing environment, set make PYTHON=/path/to/python. If document generation uses a separate environment, set DOCUMENT_PYTHON=/path/to/document/python. make runs the full analysis, saved-output sanity demonstration, regression and edge-test verification, and Word and Markdown document generation. It deliberately rebuilds the workflow; it does not implement per-stage incremental builds. R and Quarto are unnecessary for this Python implementation.
+
+Run individual stages:
+
+python3 run_pipeline.py
+python3 sanity_check_example.py
+python3 -m unittest discover -s tests -v
+python3 tools/verify_delivery.py
+python3 tools/build_documents.py
+For different inputs:
+
+python3 run_pipeline.py --airbnb /path/listings.csv --bonds /path/bonds.csv \
+  --cache /path/cache.csv --output /path/new_results
+Only the pipeline and sanity script support alternative result directories. The delivered document builder and regression verifier intentionally use this folder's results and the supplied June 2026 baseline; they need adapting before being used as verification of another dataset. One snapshot per quarter is required. config.json changes worker count and the observed-gap minimum; both also have command-line overrides.
+
+New SA2 queries require --allow-network and KOORDINATES_API_KEY in the environment. The current package was verified offline. A failed live run retains its checkpoint; resume by passing that checkpoint as --cache and selecting a new --output folder. Input files cannot be located inside the selected output folder.
+
+Verified results and intentional corrections
+3,469 listings retained; 3,469 SA2 matches; 2,673 bond records and rents matched; 2,474 usable listing gaps; 274 missing prices retained.
+174 SA2 groups. All prior joined values and location statistics match Deliverable 5 within numeric tolerance.
+10 analytical checks and 19 adversarial tests passed; all six SQLite tables match their CSV contents.
+Gap ranking now requires five observed price gaps, rather than five total listings. Four locations leave the eligible set (95 to 91), including the previous leader Bryndwr South, which has only four priced listings.
+Wigram North and Holmwood share the highest eligible gap rounded to cents, NZ$242.71. Christchurch Central remains NZ$250.00 median/night, from 117 priced listings among 119 total listings.
+Package map
+run_pipeline.py orchestrates the stages in pipeline/. tests/ contains edge tests. sanity_check_example.py verifies saved outputs and hand-checks one listing. tools/verify_delivery.py independently checks exports and baseline agreement. tools/build_documents.py generates the Word and Markdown documents from verified evidence.
+
+results/data_processed/ contains six CSV tables; results/deliverable_6.sqlite contains the same tables. Plots, automatically generated analysis notes, quality checks, a run manifest, the persisted sanity example, the test log and delivery verification report are in results/. _SUCCESS.json marks successful completion of the analytical pipeline, not of document rendering or every later verification stage.
+
+The geographic cache is inherited evidence, not a fresh API or polygon check. Bond SA2 vintage compatibility is unresolved from the available files. Active bonds and Airbnb listings have different definitions; missing bond data is not zero. The reported price gap is descriptive and does not establish causation or returns.
