@@ -1,6 +1,23 @@
+"""
+Run the complete Deliverable 7 automated pipeline.
+
+The pipeline:
+1. Cleans the July and August Airbnb data.
+2. Combines the new data with previous Airbnb data.
+3. Adds SA2 location information and prepares time fields.
+4. Runs the Airbnb price and rental-gap analyses.
+5. Creates the updated plots.
+
+Author: Gerile
+"""
+
 import subprocess
 import sys
 
+
+# -----------------------------------
+# Start pipeline
+# -----------------------------------
 
 print("\n===================================")
 print("Starting Deliverable 7 pipeline")
@@ -38,10 +55,10 @@ subprocess.run(
 
 
 # -----------------------------------
-# Step 3: Prepare data for joining
+# Step 3: Prepare Airbnb data
 # -----------------------------------
 
-print("\nStep 3: Preparing data for joining...")
+print("\nStep 3: Preparing Airbnb data...")
 
 subprocess.run(
     [
@@ -53,10 +70,10 @@ subprocess.run(
 
 
 # -----------------------------------
-# Step 4: Join and analyse data
+# Step 4: Run analyses
 # -----------------------------------
 
-print("\nStep 4: Joining and analysing data...")
+print("\nStep 4: Running analyses...")
 
 subprocess.run(
     [
@@ -68,10 +85,10 @@ subprocess.run(
 
 
 # -----------------------------------
-# Step 5: Create plot
+# Step 5: Create updated plots
 # -----------------------------------
 
-print("\nStep 5: Creating plot...")
+print("\nStep 5: Creating updated plots...")
 
 subprocess.run(
     [

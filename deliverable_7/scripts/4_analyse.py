@@ -1,30 +1,50 @@
+"""
+Run Deliverable 7 analyses.
+
+This script:
+1. Calculates median Airbnb price by month for:
+   - Christchurch overall
+   - Christchurch Central
+2. Joins Airbnb and Bond data.
+3. Calculates long-term daily rent and rental gap.
+4. Calculates median rental gap by month.
+5. Saves all analysis outputs.
+
+Author: Gerile
+"""
+
 import pandas as pd
 
 
+# -----------------------------------
 # File paths
+# -----------------------------------
+
 AIRBNB_FILE = "output/3_airbnb_ready_for_join.csv"
 BOND_FILE = "input/bond_data_clean.csv"
 
+AIRBNB_PRICE_OUTPUT = "output/4_airbnb_price_by_time.csv"
 JOINED_OUTPUT = "output/4_airbnb_bond_joined.csv"
-ANALYSIS_OUTPUT = "output/4_rental_gap_by_time.csv"
+RENTAL_GAP_OUTPUT = "output/4_rental_gap_by_time.csv"
 
 
 # -----------------------------------
-# 1. Read datasets
+# Christchurch Central location ID
 # -----------------------------------
 
-airbnb = pd.read_csv(
-    AIRBNB_FILE
-)
-
-bond = pd.read_csv(
-    BOND_FILE
-)
+CHRISTCHURCH_CENTRAL_ID = 326600
 
 
-print("\n-----------------------------------")
-print("Airbnb and Bond analysis")
-print("-----------------------------------")
+# -----------------------------------
+# Read data
+# -----------------------------------
+
+print("\n===================================")
+print("Running Deliverable 7 analyses")
+print("===================================")
+
+airbnb = pd.read_csv(AIRBNB_FILE)
+bond = pd.read_csv(BOND_FILE)
 
 print("\nAirbnb rows:")
 print(len(airbnb))
@@ -34,7 +54,7 @@ print(len(bond))
 
 
 # -----------------------------------
-# 2. Check required Airbnb columns
+# Check required columns
 # -----------------------------------
 
 required_airbnb_columns = [
@@ -46,19 +66,6 @@ required_airbnb_columns = [
     "price"
 ]
 
-for column in required_airbnb_columns:
-
-    if column not in airbnb.columns:
-
-        raise ValueError(
-            "Missing Airbnb column: " + column
-        )
-
-
-# -----------------------------------
-# 3. Check required Bond columns
-# -----------------------------------
-
 required_bond_columns = [
     "Location Id",
     "TimeFrame",
@@ -67,17 +74,25 @@ required_bond_columns = [
     "Number Of Beds"
 ]
 
+
+for column in required_airbnb_columns:
+
+    if column not in airbnb.columns:
+        raise ValueError(
+            f"Missing Airbnb column: {column}"
+        )
+
+
 for column in required_bond_columns:
 
     if column not in bond.columns:
-
         raise ValueError(
-            "Missing Bond column: " + column
+            f"Missing Bond column: {column}"
         )
 
 
 # -----------------------------------
-# 4. Prepare date columns
+# Prepare data types
 # -----------------------------------
 
 airbnb["month_year"] = pd.to_datetime(
@@ -93,23 +108,123 @@ bond["TimeFrame"] = pd.to_datetime(
 )
 
 
+airbnb["location_id"] = pd.to_numeric(
+    airbnb["location_id"],
+    errors="coerce"
+).astype("Int64")
+
+
+bond["Location Id"] = pd.to_numeric(
+    bond["Location Id"],
+    errors="coerce"
+).astype("Int64")
+
+
+# ===================================
+# Analysis 1:
+# Airbnb median price by month
+# ===================================
+
+print("\n===================================")
+print("Analysis 1: Airbnb median prices")
+print("===================================")
+
+
 # -----------------------------------
-# 5. Prepare location ID columns
+# Christchurch overall
 # -----------------------------------
 
-airbnb["location_id"] = (
+overall_price = (
+    airbnb
+    .groupby("month_year")
+    .agg(
+        christchurch_median_price=(
+            "price",
+            "median"
+        )
+    )
+    .reset_index()
+)
+
+
+# -----------------------------------
+# Christchurch Central
+# -----------------------------------
+
+central = airbnb[
     airbnb["location_id"]
-    .astype("Int64")
-)
+    == CHRISTCHURCH_CENTRAL_ID
+].copy()
 
-bond["Location Id"] = (
-    bond["Location Id"]
-    .astype("Int64")
+
+print("\nChristchurch Central rows:")
+print(len(central))
+
+
+if len(central) == 0:
+    raise ValueError(
+        "No Christchurch Central Airbnb rows found."
+    )
+
+
+central_price = (
+    central
+    .groupby("month_year")
+    .agg(
+        central_median_price=(
+            "price",
+            "median"
+        )
+    )
+    .reset_index()
 )
 
 
 # -----------------------------------
-# 6. Filter Bond to overall rent
+# Combine price summaries
+# -----------------------------------
+
+airbnb_price_by_time = overall_price.merge(
+    central_price,
+    on="month_year",
+    how="left"
+)
+
+airbnb_price_by_time = (
+    airbnb_price_by_time
+    .sort_values("month_year")
+)
+
+
+print("\nAirbnb median price by month:")
+print(airbnb_price_by_time)
+
+
+# -----------------------------------
+# Save Airbnb price analysis
+# -----------------------------------
+
+airbnb_price_by_time.to_csv(
+    AIRBNB_PRICE_OUTPUT,
+    index=False
+)
+
+print("\nSaved:")
+print(AIRBNB_PRICE_OUTPUT)
+
+
+# ===================================
+# Analysis 2:
+# Airbnb-Bond rental gap
+# ===================================
+
+print("\n===================================")
+print("Analysis 2: Airbnb-Bond rental gap")
+print("===================================")
+
+
+# -----------------------------------
+# Filter Bond data
 # -----------------------------------
 
 bond_summary = bond[
@@ -124,7 +239,7 @@ print(len(bond_summary))
 
 
 # -----------------------------------
-# 7. Check Bond join keys
+# Check duplicate Bond join keys
 # -----------------------------------
 
 bond_key_counts = (
@@ -138,11 +253,10 @@ bond_key_counts = (
     .size()
 )
 
-duplicate_bond_keys = (
-    bond_key_counts[
-        bond_key_counts > 1
-    ]
-)
+
+duplicate_bond_keys = bond_key_counts[
+    bond_key_counts > 1
+]
 
 
 print(
@@ -161,23 +275,19 @@ if len(duplicate_bond_keys) > 0:
 
 
 # -----------------------------------
-# 8. Join Airbnb and Bond
+# Join Airbnb and Bond
 # -----------------------------------
 
-joined = pd.merge(
-    airbnb,
+joined = airbnb.merge(
     bond_summary,
-
     left_on=[
         "location_id",
         "TimeFrame"
     ],
-
     right_on=[
         "Location Id",
         "TimeFrame"
     ],
-
     how="inner"
 )
 
@@ -186,45 +296,57 @@ print("\nRows after inner join:")
 print(len(joined))
 
 
+if len(joined) == 0:
+    raise ValueError(
+        "The Airbnb-Bond join returned no rows."
+    )
+
+
 # -----------------------------------
-# 9. Check months included after join
+# Show included months
 # -----------------------------------
 
-print("\nAirbnb months included after join:")
-
-print(
+included_months = (
     joined["month_year"]
     .drop_duplicates()
     .sort_values()
 )
 
+print("\nAirbnb months included after join:")
+print(included_months)
+
 
 # -----------------------------------
-# 10. Check quarters included after join
+# Show included Bond quarters
 # -----------------------------------
 
-print("\nBond quarters included after join:")
-
-print(
+included_quarters = (
     joined["TimeFrame"]
     .drop_duplicates()
     .sort_values()
 )
 
+print("\nBond quarters included after join:")
+print(included_quarters)
+
 
 # -----------------------------------
-# 11. Keep rows with usable prices
+# Remove unusable rows
 # -----------------------------------
 
-before = len(joined)
+rows_before = len(joined)
 
-analysis_data = joined[
-    joined["price"].notna()
-    &
-    joined["Median Rent"].notna()
-].copy()
+joined = joined.dropna(
+    subset=[
+        "price",
+        "Median Rent"
+    ]
+)
 
-after = len(analysis_data)
+rows_removed = (
+    rows_before
+    - len(joined)
+)
 
 
 print(
@@ -232,62 +354,59 @@ print(
     "or Median Rent was missing:"
 )
 
-print(before - after)
+print(rows_removed)
 
 
 # -----------------------------------
-# 12. Convert weekly rent to daily
+# Calculate long-term daily rent
 # -----------------------------------
 
-analysis_data[
-    "long_term_daily_rent"
-] = (
-    analysis_data["Median Rent"] / 7
+joined["long_term_daily_rent"] = (
+    joined["Median Rent"] / 7
 )
 
 
 # -----------------------------------
-# 13. Calculate rental gap
+# Calculate rental gap
 # -----------------------------------
 
-analysis_data["rental_gap"] = (
-    analysis_data["price"]
-    -
-    analysis_data["long_term_daily_rent"]
+joined["rental_gap"] = (
+    joined["price"]
+    - joined["long_term_daily_rent"]
 )
 
 
 # -----------------------------------
-# 14. Show example calculations
+# Show example calculations
 # -----------------------------------
+
+example_columns = [
+    "location_name",
+    "month_year",
+    "TimeFrame",
+    "price",
+    "Median Rent",
+    "long_term_daily_rent",
+    "rental_gap"
+]
+
 
 print("\nExample rental-gap calculations:")
 
 print(
-    analysis_data[
-        [
-            "location_name",
-            "month_year",
-            "TimeFrame",
-            "price",
-            "Median Rent",
-            "long_term_daily_rent",
-            "rental_gap"
-        ]
+    joined[
+        example_columns
     ].head(10)
 )
 
 
 # -----------------------------------
-# 15. Calculate median gap by month
+# Summarise rental gap by month
 # -----------------------------------
 
-gap_by_time = (
-    analysis_data
-    .groupby(
-        "month_year",
-        as_index=False
-    )
+rental_gap_by_time = (
+    joined
+    .groupby("month_year")
     .agg(
         airbnb_records=(
             "id",
@@ -309,65 +428,39 @@ gap_by_time = (
             "median"
         )
     )
+    .reset_index()
+    .sort_values("month_year")
 )
 
-
-# -----------------------------------
-# 16. Sort by month
-# -----------------------------------
-
-gap_by_time = (
-    gap_by_time
-    .sort_values(
-        "month_year"
-    )
-    .reset_index(
-        drop=True
-    )
-)
-
-
-# -----------------------------------
-# 17. Show analysis result
-# -----------------------------------
 
 print("\nRental gap by month:")
-
-print(
-    gap_by_time
-)
+print(rental_gap_by_time)
 
 
 # -----------------------------------
-# 18. Save joined data
+# Save rental-gap outputs
 # -----------------------------------
 
-analysis_data.to_csv(
+joined.to_csv(
     JOINED_OUTPUT,
     index=False
 )
 
-
-# -----------------------------------
-# 19. Save monthly analysis
-# -----------------------------------
-
-gap_by_time.to_csv(
-    ANALYSIS_OUTPUT,
+rental_gap_by_time.to_csv(
+    RENTAL_GAP_OUTPUT,
     index=False
 )
 
 
-# -----------------------------------
-# 20. Confirm saved files
-# -----------------------------------
-
 print("\nSaved:")
+print(JOINED_OUTPUT)
+print(RENTAL_GAP_OUTPUT)
 
-print(
-    JOINED_OUTPUT
-)
 
-print(
-    ANALYSIS_OUTPUT
-)
+# -----------------------------------
+# Complete
+# -----------------------------------
+
+print("\n===================================")
+print("Analysis completed successfully")
+print("===================================")
