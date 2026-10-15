@@ -1,0 +1,794 @@
+{
+  "status": "complete",
+  "completed_at_utc": "2026-10-15T04:11:57.656211+00:00",
+  "python": "3.12.14",
+  "config": {
+    "start_month": "2025-10",
+    "end_month": "2026-08",
+    "city": "Christchurch City",
+    "sa2_layer_id": 98970,
+    "sa2_code_field": "SA22019_V1_00",
+    "sa2_name_field": "SA22019_V1_00_NAME",
+    "geography_vintage": "2019",
+    "city_geography_layer_id": 98779,
+    "additional_archive_dates": [
+      "2025-10-05"
+    ],
+    "minimum_priced_listings": 5,
+    "maximum_short_stay_minimum_nights": 30,
+    "boundary_warning_metres": 150
+  },
+  "inputs": {
+    "retrieved_at_utc": "2026-10-15T03:38:30.938644+00:00",
+    "scope": {
+      "start_month": "2025-10",
+      "end_month": "2026-08"
+    },
+    "airbnb": [
+      {
+        "path": "data/raw/airbnb/2025-10-05_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2025-10-05/visualisations/listings.csv",
+        "sha256": "88dadd87d46d3d5a2c8772985c7b864ba4070170b5408a58551fb53bf3085366",
+        "bytes": 8323924,
+        "snapshot_date": "2025-10-05",
+        "snapshot_month": "2025-10",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": null
+      },
+      {
+        "path": "data/raw/airbnb/2025-11-07_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2025-11-07/visualisations/listings.csv",
+        "sha256": "60ed7b8475b4e3c67f12856e5c0876a9e39197b38920a2679e6527a29a5ab7cc",
+        "bytes": 8483903,
+        "snapshot_date": "2025-11-07",
+        "snapshot_month": "2025-11",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": "20251107024032"
+      },
+      {
+        "path": "data/raw/airbnb/2025-12-11_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2025-12-11/visualisations/listings.csv",
+        "sha256": "85836bbe19745285952b7f964eb606c831c897af239b1837994e45a5496ea152",
+        "bytes": 8577926,
+        "snapshot_date": "2025-12-11",
+        "snapshot_month": "2025-12",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": "20251211043544"
+      },
+      {
+        "path": "data/raw/airbnb/2026-01-16_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-01-16/visualisations/listings.csv",
+        "sha256": "1de79c6480eb4c212fade8d0595037be9bd60d81720078ac54b637bbae8c02a9",
+        "bytes": 8109945,
+        "snapshot_date": "2026-01-16",
+        "snapshot_month": "2026-01",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": "20260116025119"
+      },
+      {
+        "path": "data/raw/airbnb/2026-02-13_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-02-13/visualisations/listings.csv",
+        "sha256": "5bc2f802d519dbca0fc5a2912bb489573196ef7f89891bfe3b213ffd2f73bf10",
+        "bytes": 8445142,
+        "snapshot_date": "2026-02-13",
+        "snapshot_month": "2026-02",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": "20260213082401"
+      },
+      {
+        "path": "data/raw/airbnb/2026-03-17_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-03-17/visualisations/listings.csv",
+        "sha256": "52a94be044cda291ffaace19736ed5af1bfd3a39be5b18d46ad7039110030cf6",
+        "bytes": 8663250,
+        "snapshot_date": "2026-03-17",
+        "snapshot_month": "2026-03",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": "20260317022623"
+      },
+      {
+        "path": "data/raw/airbnb/2026-04-16_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-04-16/visualisations/listings.csv",
+        "sha256": "289376f0e88e514580c7e6208adb627d67e0fec5f95321bd832436f3194b5089",
+        "bytes": 8649033,
+        "snapshot_date": "2026-04-16",
+        "snapshot_month": "2026-04",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": "20260416055825"
+      },
+      {
+        "path": "data/raw/airbnb/2026-05-23_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-05-23/visualisations/listings.csv",
+        "sha256": "9bbe38cbc0f67f4c4bdf5df42a6b2b819555b0db65124a24401c600c8e776079",
+        "bytes": 8717734,
+        "snapshot_date": "2026-05-23",
+        "snapshot_month": "2026-05",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": "20260523233653"
+      },
+      {
+        "path": "data/raw/airbnb/2026-06-19_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-06-19/visualisations/listings.csv",
+        "sha256": "8ef2331bef35aeff354892f06950c447cb32c216fba27614880fd23698edec8d",
+        "bytes": 9006627,
+        "snapshot_date": "2026-06-19",
+        "snapshot_month": "2026-06",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": "20260619054827"
+      },
+      {
+        "path": "data/raw/airbnb/2026-07-12_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-07-12/visualisations/listings.csv",
+        "sha256": "8d12d28d7a951d877df0d375923bc49b78bfbc0dd33312ddfebab0580d0c2736",
+        "bytes": 9045003,
+        "snapshot_date": "2026-07-12",
+        "snapshot_month": "2026-07",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": "20260712215645"
+      },
+      {
+        "path": "data/raw/airbnb/2026-08-13_listings.csv",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-08-13/visualisations/listings.csv",
+        "sha256": "1528fa122cdc78d41e8ea95d00b3a358335b2b0ef2248a76250e12ea9b3db15e",
+        "bytes": 9091701,
+        "snapshot_date": "2026-08-13",
+        "snapshot_month": "2026-08",
+        "source": "Inside Airbnb",
+        "publisher_scrape_id": "20260813020733"
+      }
+    ],
+    "bonds": {
+      "path": "data/raw/tenancy/quarterly_b40a39a0ce899362.csv",
+      "url": "https://www.tenancy.govt.nz/assets/Uploads/Tenancy/Rental-bond-data/Detailed-Quarterly-Tenancy-Q1-2020-Q3-2026.csv?m=5766222a0dc2d94c11545872be77333e32f7c999",
+      "sha256": "b40a39a0ce899362df5da729ed38cf8962cc31058910693aa2301feb9d0be80e",
+      "bytes": 13199634,
+      "source": "MBIE Tenancy Services",
+      "publisher_label": "Detailed quarterly report, January 2020 to April 2026 [CSV, 13 MB]",
+      "source_page": "https://www.tenancy.govt.nz/about-tenancy-services/data-and-statistics/rental-bond-data/"
+    },
+    "missing_airbnb_months": [],
+    "source_pages": [
+      "https://insideairbnb.com/get-the-data/",
+      "https://www.tenancy.govt.nz/about-tenancy-services/data-and-statistics/rental-bond-data/"
+    ],
+    "city_monthly_bonds": {
+      "category": "monthly_territorial_authority",
+      "path": "Raw data/detailed-monthly-tla-tenancy-october.csv",
+      "publisher_label": "By territorial authority, February 1993 to August 2026 [CSV, 2.3 MB]",
+      "url": "https://www.tenancy.govt.nz/assets/Uploads/Tenancy/Rental-bond-data/detailed-monthly-tla-tenancy-october.csv?m=e7e9c47ce8c12eedd40ee1e4534398d28f5643e2",
+      "sha256": "7d163430409c6ebdeec52b28ebd3fb65787ca68e7c65551c62648a094bec756b",
+      "bytes": 2360379,
+      "rows": 26918,
+      "columns": [
+        "Time Frame",
+        "Location Id",
+        "Location",
+        "Lodged Bonds",
+        "Active Bonds",
+        "Closed Bonds",
+        "Median Rent",
+        "Geometric Mean Rent",
+        "Upper Quartile Rent",
+        "Lower Quartile Rent",
+        "Log Std Dev Weekly Rent"
+      ],
+      "encoding": "utf-8-sig",
+      "date_field": "Time Frame",
+      "first_timeframe": "1993-02-01",
+      "last_timeframe": "2026-08-01",
+      "requested_late_periods_present": [
+        "2026-07-01",
+        "2026-08-01"
+      ],
+      "christchurch_rows": 403,
+      "christchurch_last_timeframe": "2026-08-01",
+      "source": "MBIE Tenancy Services monthly TA data",
+      "source_page": "https://www.tenancy.govt.nz/about-tenancy-services/data-and-statistics/rental-bond-data/"
+    },
+    "airbnb_price_investigation_sources": [
+      {
+        "path": "data/raw/airbnb/calendar/2025-12-11_calendar.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2025-12-11/data/calendar.csv.gz",
+        "sha256": "fd5a05bc210422f67727d15019fde19b685b8bb0bdee63e27d9979c734b389b4",
+        "bytes": 44191453,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/calendar/2026-01-16_calendar.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-01-16/data/calendar.csv.gz",
+        "sha256": "e440430d2b5cd677206cd263008a8a0b977efc0dfd186d8b3c755b3134d9ba41",
+        "bytes": 41299104,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/calendar/2026-02-13_calendar.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-02-13/data/calendar.csv.gz",
+        "sha256": "f06ab49076fd5e84efca841ffe517b16994899cae60aaed526e4bdda2e5bb222",
+        "bytes": 42415310,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2025-10-05_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2025-10-05/data/listings.csv.gz",
+        "sha256": "7ad9aaecf763f1688cda2e65d93be7b3f38171ece922111510a2c68294cee019",
+        "bytes": 28237848,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2025-11-07_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2025-11-07/data/listings.csv.gz",
+        "sha256": "89bb93bdb76e309feaa5bafdd3e0ad9cb5ab1fdf04571059f72398b864200e86",
+        "bytes": 29687314,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2025-12-11_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2025-12-11/data/listings.csv.gz",
+        "sha256": "ff69b66e4fd19719c513bf17b6b1772220c37e171071e1c162d1e8cf28f00b46",
+        "bytes": 26874363,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2026-01-16_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-01-16/data/listings.csv.gz",
+        "sha256": "0ab0c1ff4c902a949f7f69c958c1f045dcf47118dd601214ec150bc335765db4",
+        "bytes": 24388992,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2026-02-13_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-02-13/data/listings.csv.gz",
+        "sha256": "9fbdb903a1b8eb9ca302f8b2b5a45a4e6150dd6d65d0e07a70509a17793e4e39",
+        "bytes": 25233085,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2026-03-17_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-03-17/data/listings.csv.gz",
+        "sha256": "7980609efb50cfbf8fb236c43b08c8f8a26c360a3deb197ba40e4fad2b855eab",
+        "bytes": 29363935,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2026-04-16_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-04-16/data/listings.csv.gz",
+        "sha256": "ab7a6daa95ab5e647756e05f08910155ea6393f0bb618aba88ec1543ff673e5b",
+        "bytes": 29296468,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2026-05-23_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-05-23/data/listings.csv.gz",
+        "sha256": "349eba46eed251bc3b6f2c9a1e18de9e81b3ba2fc3f63ff24b3cc1119947f0af",
+        "bytes": 31634514,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2026-06-19_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-06-19/data/listings.csv.gz",
+        "sha256": "4c5e67e3992ae0eaa161c4a3a6a212f177b765cec4136d6120efb7bdfda2b382",
+        "bytes": 32368718,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2026-07-12_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-07-12/data/listings.csv.gz",
+        "sha256": "e956b756bb0126e0a6adab9739401f64e6dc20b8d8a91b244491ca7341d75b29",
+        "bytes": 32692431,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "data/raw/airbnb/detailed/2026-08-13_listings.csv.gz",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-08-13/data/listings.csv.gz",
+        "sha256": "2b76dc4d129451f883611093ac81e9e1cc40e8453a617e0e740d4c0f9138eb5d",
+        "bytes": 33116256,
+        "source": "Inside Airbnb price-gap investigation"
+      },
+      {
+        "path": "Raw data/inside_airbnb_christchurch_checks/airbnb_price_recovery_audit.csv",
+        "sha256": "5212dee8fb5347a538fc601cef91d6c20881203a311f2aefeaced5a4b3162447",
+        "source": "Christchurch same-snapshot price recovery audit"
+      },
+      {
+        "path": "Raw data/inside_airbnb_christchurch_checks/investigation_manifest.json",
+        "sha256": "7410d9b2ca768a45a14b9274b0d02913eaed687c99e065b88e6ebde30e1191e4",
+        "source": "Christchurch source investigation manifest"
+      }
+    ]
+  },
+  "code_sha256": {
+    "run_pipeline.py": "b5959e94a0ac28896d898ec96a2b69b45a51fb289b07247e15e3d66a33428894",
+    "config/project.json": "4ab5df6e082c692e820401895d215b0d60464c726eb25b647e29181543dc02f6",
+    "requirements.txt": "ef9c8e745ece868ae28f9b203e584bd4e72ae368e960bae76bbf246ab5da8e4b",
+    "pipeline/__init__.py": "cef22db4cfda92efd4107a77665e1249794175927abb1cc38d3614bca41cfe92",
+    "pipeline/city_monthly.py": "a638de78d21df3f27c23231d8e15bd6be67a1a2b02a12a42548277e045de2768",
+    "pipeline/figures.py": "bd474f3afe29922a9e4dc277c007eb9187d028293498cb27449f7d20d2b5c942",
+    "pipeline/geography.py": "f32f8f021f4ce1801b35e80cc6a99d2ef1cffe040e5d65e690a5ef07efccbedb",
+    "pipeline/maps.py": "6571cea6f752d45a48c8760fe068fbd1acf6f37071e4cb2cbe83b9fa5212a7ab",
+    "pipeline/price_investigation.py": "b793bd2b1ef01de35b38b77fa4250ceca0b8ac2ce533913fbd81dc2de04780fe",
+    "pipeline/sources.py": "adecbfe10d416e08ca2ee5f83535b38cd510098f676902727b02431220f872bf",
+    "pipeline/transforms.py": "97ef0fb05393d4b7cfc4575e4e3cfa65a45520745a7d846f8325e08e76fb25dd",
+    "pipeline/validation.py": "e7378962fe47066b0fe607c7ac068aad2536c13d8ead1cc23c616f9d5ab7c5d3",
+    "pipeline/workbooks.py": "655d03561bbe9ea488333957e8135c344bf0a9e6fb5f48b248c37e24c5d3f9c9",
+    "tools/check_airbnb_price_gaps.py": "6d9be179c7889b032f7c46a5a11eaba5826ea646a82b3bfd183fb36b31de781d",
+    "tools/download_inputs.py": "0ebe2e18f2164a9bc58322e9678153a496534cf823217b8f42964079f5a983c7",
+    "tools/download_tenancy_raw.py": "e42d189fa9af569180514ead8bdf67af7bf7c3a8a92d4e7509c5999074147c7f",
+    "tools/verify_outputs.py": "94da8b24a9693b6455f5b52048182b1ed02d6a50a4f102d674cbdddae5386a7f",
+    "tests/test_airbnb_recovery.py": "2880f5184ba78e46bdf35e91f85ed4d5b027fd4dcf7aa88474a6aa65887f04a6",
+    "tests/test_city_monthly.py": "a80ed845445b5d6daa90e342553745a03961d3090fd1885bc90d4204a7151f7c",
+    "tests/test_transforms.py": "f9acf21ea31295718cddf219cdb73d7dc7253ee053c6a9ca43aae0ffcc65d2ef",
+    "pipeline/map_template.html": "31e5de75ae959be9b6966b41dacc84b62b83a71a2d5388ea73b3e8ccb991b0fb"
+  },
+  "artifacts": {
+    "outputs/Christchurch rental price map.html": {
+      "sha256": "cf7d762d73adc4aabd07149fdd0587fd44e289a56b524baccd5f6cea3978f7a3",
+      "bytes": 6253519
+    },
+    "outputs/christchurch_rentals.sqlite": {
+      "sha256": "fd67898d15bc3e95052fd6543d0f8d5c7db91f63861263e3bf586828629842ab",
+      "bytes": 17457152
+    },
+    "outputs/maps/christchurch_price_bars.html": {
+      "sha256": "b772d9d3fa2ceebaf98f429b12205822fa69c729bfff8d741441cb8690b05113",
+      "bytes": 6567693
+    },
+    "outputs/tables/coverage.csv": {
+      "sha256": "3956887c61c6d61f5baf2a618efcee764874933a47d57a5ccfb67389f38d382c",
+      "bytes": 1693
+    },
+    "outputs/tables/bond_area_quarter.csv": {
+      "sha256": "b50477826551ff335ee85588731d8b373072244fb119288a58411e4d7c7a8da9",
+      "bytes": 44041
+    },
+    "outputs/tables/city_monthly.csv": {
+      "sha256": "648f36d9f20fa992e534c9a375e5b338808802a5b7dabdf281bbd6d4cb5b128e",
+      "bytes": 7305
+    },
+    "outputs/tables/airbnb_merged.csv": {
+      "sha256": "17418a51d726d4686f8776ac901788670fb66c9732e07fd542f74d4abb5883ca",
+      "bytes": 15053057
+    },
+    "outputs/tables/area_monthly.csv": {
+      "sha256": "65e8e95bd012a5a170f3d7c5fc0b0cdca7cd9c3eda7324649f84f7d77b65c1b3",
+      "bytes": 1050208
+    },
+    "outputs/tables/airbnb_price_recovery_audit.csv": {
+      "sha256": "9957f05be2dc224255be06b6996ed126b194c83c7abaf664ea53b835a2fda4e4",
+      "bytes": 4572
+    },
+    "outputs/tables/cleaning_audit.csv": {
+      "sha256": "77fb760875a75aeb5602ef9b65e83e0baf94d8e767e662dd67723127e5564998",
+      "bytes": 731
+    },
+    "outputs/tables/city_bond_monthly.csv": {
+      "sha256": "ef84ca69bd67d93f35f455d6d26096a827ccbb108428c219ae5bc039dcce7c56",
+      "bytes": 2069
+    },
+    "outputs/tables/bond_detailed.csv": {
+      "sha256": "3329521766584dcde8f8f7f9f40c6a48a1cbe2c19cf22263e8c679371ce61c2c",
+      "bytes": 242466
+    },
+    "outputs/excel/christchurch_merged_datasets.xlsx": {
+      "sha256": "c1aca43bfce9b923b8fe7a8d62465f8e600c5d08cc149a8a622d3ab764418055",
+      "bytes": 8142415
+    },
+    "outputs/excel/christchurch_rental_analysis.xlsx": {
+      "sha256": "ed32df73721f53c15a6f6b4ac1902bb9114a9a6794ac300afea998ba70536a10",
+      "bytes": 707914
+    },
+    "outputs/Christchurch rental price map_files/5200@2x(4).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1301(2).png": {
+      "sha256": "af2a708b7f1750039bf64b7b8505696c713bd63c98ec973551dd270cd193fe64",
+      "bytes": 16895
+    },
+    "outputs/Christchurch rental price map_files/1300(6).png": {
+      "sha256": "4c56f12cf438fabb5380e5715a174147cd5d34c9c41effe97007936a4f0f7be6",
+      "bytes": 9924
+    },
+    "outputs/Christchurch rental price map_files/5198@2x(4).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1297(4).png": {
+      "sha256": "31d574e876ef64e00328103e1c4ca87ab4a759aabbabf798300356eb6685cfe0",
+      "bytes": 19809
+    },
+    "outputs/Christchurch rental price map_files/1299(5).png": {
+      "sha256": "b5eb215f31ad3ef316d037a6e585b85995c24f06d54e89f9ac1d20514ad8eaf3",
+      "bytes": 523
+    },
+    "outputs/Christchurch rental price map_files/5199@2x(2).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1298(1).png": {
+      "sha256": "843b1640cf19f8ff571895dec9343e60d67bb8de41e85adbc4ed8b1c78a75588",
+      "bytes": 17154
+    },
+    "outputs/Christchurch rental price map_files/1299(4).png": {
+      "sha256": "e6397eacfb30697c301da2fd06c918b9151a03cb27aa2ee375ff32795a99bc61",
+      "bytes": 13803
+    },
+    "outputs/Christchurch rental price map_files/5199@2x(3).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1297(5).png": {
+      "sha256": "9c44e7ddae6962eaf70b8b8954443eb86677c05fc67eb3935a8d3816d2285a0b",
+      "bytes": 2143
+    },
+    "outputs/Christchurch rental price map_files/1300(7).png": {
+      "sha256": "1c77b348765c66299f86929a49254e3e6d7893d3930322ff7879dda6d9071899",
+      "bytes": 103
+    },
+    "outputs/Christchurch rental price map_files/5198@2x(5).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/5197@2x(1).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/5198@2x.png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1301(3).png": {
+      "sha256": "e481c28005a6ff6b36441629575ea7679fb84ac9923ec644344679f2d17abb7d",
+      "bytes": 24190
+    },
+    "outputs/Christchurch rental price map_files/5200@2x(5).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1297(2).png": {
+      "sha256": "de6559e96238873c1efb4f1961e9aad3efb057beefbcf09234d6e78e49c63f57",
+      "bytes": 11952
+    },
+    "outputs/Christchurch rental price map_files/5199@2x(4).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1299(3).png": {
+      "sha256": "1c77b348765c66299f86929a49254e3e6d7893d3930322ff7879dda6d9071899",
+      "bytes": 103
+    },
+    "outputs/Christchurch rental price map_files/1298(7).png": {
+      "sha256": "1c77b348765c66299f86929a49254e3e6d7893d3930322ff7879dda6d9071899",
+      "bytes": 103
+    },
+    "outputs/Christchurch rental price map_files/5200@2x(2).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1301(4).png": {
+      "sha256": "8d40c1abff66f46851834c067fa1f725d99ec1a92885eff218d0c2f1ff22eed1",
+      "bytes": 18676
+    },
+    "outputs/Christchurch rental price map_files/5197@2x(6).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/5198@2x(2).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1300(1).png": {
+      "sha256": "8d199209dfca3846c59129ddadf35bbd7304d3b4030b184b96466d183fb49654",
+      "bytes": 25442
+    },
+    "outputs/Christchurch rental price map_files/5198@2x(3).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/5197@2x(7).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1301(5).png": {
+      "sha256": "4136add1aab833a04781fec0890216518bbcfa9dfcaea7af282b9e4799bcbebf",
+      "bytes": 23132
+    },
+    "outputs/Christchurch rental price map_files/5200@2x(3).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1298(6).png": {
+      "sha256": "a8aab24bfd9d3dc25c2332d9ea19e26c4988c9c8e715a25b9b28bb078d8b44c6",
+      "bytes": 15352
+    },
+    "outputs/Christchurch rental price map_files/5199@2x(5).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1299(2).png": {
+      "sha256": "77885e6d88321597f72f8afa76ccf6c6720ce163a4ff2dce3cc59e35d0c62b51",
+      "bytes": 20855
+    },
+    "outputs/Christchurch rental price map_files/1297(3).png": {
+      "sha256": "1c77b348765c66299f86929a49254e3e6d7893d3930322ff7879dda6d9071899",
+      "bytes": 103
+    },
+    "outputs/Christchurch rental price map_files/1297.png": {
+      "sha256": "ca316a18f771f7ddd0c0daf2a351b922ef9a39c9a98eccec39bd640d5fa52be3",
+      "bytes": 16715
+    },
+    "outputs/Christchurch rental price map_files/1298(5).png": {
+      "sha256": "5d44387cd7dad75a5761ec1513f9cecb11781d04199e7f895e9d5a30d1e87d58",
+      "bytes": 1862
+    },
+    "outputs/Christchurch rental price map_files/1299(1).png": {
+      "sha256": "ee3a63f8e2e550f1fc1239efd61968810eb8d063840489592b34d738c97a4426",
+      "bytes": 30889
+    },
+    "outputs/Christchurch rental price map_files/5199@2x(6).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1300(2).png": {
+      "sha256": "1574c973f686e39ac9ce2363d1f6c77624ade287e96ac4c0bf48638f48bf0950",
+      "bytes": 26158
+    },
+    "outputs/Christchurch rental price map_files/1299.png": {
+      "sha256": "5e5ae7d634ba95a3a48d947c965057eb7ccdc24fc4ae01c1f50084d54941a97f",
+      "bytes": 35074
+    },
+    "outputs/Christchurch rental price map_files/5197@2x(4).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1301(6).png": {
+      "sha256": "b7d46c63b0316a37267a1145164cffcc6039142df3db1f790226528e50a32ea2",
+      "bytes": 20138
+    },
+    "outputs/Christchurch rental price map_files/1298.png": {
+      "sha256": "4584e9a314cf1389b1d3a8a88cd7cbc8aeed4991bc822aab74157d845a1aa5dd",
+      "bytes": 14093
+    },
+    "outputs/Christchurch rental price map_files/5197@2x.png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/5200@2x(1).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1301(7).png": {
+      "sha256": "1c77b348765c66299f86929a49254e3e6d7893d3930322ff7879dda6d9071899",
+      "bytes": 103
+    },
+    "outputs/Christchurch rental price map_files/5197@2x(5).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/5198@2x(1).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/5199@2x.png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1300(3).png": {
+      "sha256": "bdc2eff48f09acf48b9b339dc132d2fc8e42475e1a44498fa69e6ddc366bdfb0",
+      "bytes": 16119
+    },
+    "outputs/Christchurch rental price map_files/1300.png": {
+      "sha256": "b3ba4fd6ede5a28c0d1b9c365c94bb5e0e7a29875fde7c0254d34db394994bb2",
+      "bytes": 29175
+    },
+    "outputs/Christchurch rental price map_files/1297(1).png": {
+      "sha256": "ae7b8766ca90bb3a361884c2dcf2f899a003e6ee139e246168815384af96bfc1",
+      "bytes": 12903
+    },
+    "outputs/Christchurch rental price map_files/5199@2x(7).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1298(4).png": {
+      "sha256": "89b745bd2933b3fea2275259a7295f309ca8b9a7617d52f0d484585307c29380",
+      "bytes": 12461
+    },
+    "outputs/Christchurch rental price map_files/1301.png": {
+      "sha256": "c89f0cf0126a0009c0dcd6e0a2d3fd603a7ec607e70e84d4fd5e4afe376f4620",
+      "bytes": 15853
+    },
+    "outputs/Christchurch rental price map_files/5198@2x(6).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1300(4).png": {
+      "sha256": "b8377d07f1900ec5a338dd06e498de90e24b7d4e651995aca400e6bc87a0849b",
+      "bytes": 14626
+    },
+    "outputs/Christchurch rental price map_files/5197@2x(2).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/5200@2x(6).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1298(3).png": {
+      "sha256": "1c77b348765c66299f86929a49254e3e6d7893d3930322ff7879dda6d9071899",
+      "bytes": 103
+    },
+    "outputs/Christchurch rental price map_files/1299(7).png": {
+      "sha256": "d6a5afcf1ade8cc15ba591ac81d93d6afb1aa9fb81cba81a7d6357ebe6561a75",
+      "bytes": 3889
+    },
+    "outputs/Christchurch rental price map_files/1297(6).png": {
+      "sha256": "550d67cf5b742e0e65c82114e2a96a30f8daf30391f8855e958fd16a1a5afe50",
+      "bytes": 22156
+    },
+    "outputs/Christchurch rental price map_files/1297(7).png": {
+      "sha256": "3dacc33838f0e9b24abda6d1454ef0e68b92903fbeea6288027eac99820f4e5d",
+      "bytes": 3184
+    },
+    "outputs/Christchurch rental price map_files/5199@2x(1).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1299(6).png": {
+      "sha256": "6461ead86d1e8c65d435bb3320b2777e6a412220420762875a631da9770d3bbc",
+      "bytes": 16764
+    },
+    "outputs/Christchurch rental price map_files/1298(2).png": {
+      "sha256": "7df35842b2ab74e812d1a670a7562c6260dde91274c52edf5bf0659640248146",
+      "bytes": 10658
+    },
+    "outputs/Christchurch rental price map_files/5200@2x(7).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1301(1).png": {
+      "sha256": "f904afa0c6ce310f192073837986fad8b8555d5870adc18ef5b5dc627ea0f1bc",
+      "bytes": 23243
+    },
+    "outputs/Christchurch rental price map_files/5200@2x.png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/5197@2x(3).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/5198@2x(7).png": {
+      "sha256": "69be4aecf9f814ba45d585801a5aa41e79b16fc88eafec5b1954a9f06a69e6be",
+      "bytes": 2049
+    },
+    "outputs/Christchurch rental price map_files/1300(5).png": {
+      "sha256": "09b39b332a9d834133c5049d7c28b55523ebc25c103787d22d480a83f63a8685",
+      "bytes": 7640
+    },
+    "outputs/figures/03_largest_area_price_gaps.png": {
+      "sha256": "3d558f85ebdbffe9dfdcfe9cefb42e5d38509a80823e67c87ad6cb06ca0bcc8a",
+      "bytes": 148629
+    },
+    "outputs/figures/03_largest_area_price_gaps.pdf": {
+      "sha256": "e689af01f992244a9fd9bf6c9b9a2a66bac051b6b05aeb16ed6b1ab2943164e7",
+      "bytes": 22313
+    },
+    "outputs/figures/07_spatial_price_bars.pdf": {
+      "sha256": "ea0041c8fdb839269dd8bb805299c041486d0e05806ce7b14fb0ffcc5ec9edf6",
+      "bytes": 932210
+    },
+    "outputs/figures/01_monthly_price_benchmarks.png": {
+      "sha256": "6d0a370b08cee7c111b45f58720caf08416395faf0722251c9f5259710666d49",
+      "bytes": 142213
+    },
+    "outputs/figures/09_july_august_citywide_comparison.png": {
+      "sha256": "c0bd1589f979a743e6eb618ddacc066d5a0de3c127ecb1804cabd50a7fa334b0",
+      "bytes": 120809
+    },
+    "outputs/figures/01_monthly_price_benchmarks.pdf": {
+      "sha256": "f9d131c8cd4d65878cd750cb484490d70a16c2a2236adab233d0e87968b3704b",
+      "bytes": 23074
+    },
+    "outputs/figures/09_july_august_citywide_comparison.pdf": {
+      "sha256": "84846f31e1cd5ab1d0311ea624d0a8b77e6774a619cf94fa210aadf03867c641",
+      "bytes": 23118
+    },
+    "outputs/figures/07_spatial_price_bars.png": {
+      "sha256": "900df55a13912f96983016f69959486979aa85f4af33b5bdd34d14d606e9b64f",
+      "bytes": 557378
+    },
+    "outputs/figures/08_airbnb_and_active_bonds.png": {
+      "sha256": "88486ae7b8a7a58121d3260143c103e3c1a39fc551fea5052c5f1bc9d5c94313",
+      "bytes": 148968
+    },
+    "outputs/figures/04_area_price_comparison.png": {
+      "sha256": "63dfca21d144bff96f988521c69a0cc37c287692bacc81e75c5ffab1b9ab9214",
+      "bytes": 116185
+    },
+    "outputs/figures/05_data_coverage.png": {
+      "sha256": "e15fca7fb3f9e1a27c922c30ab1d581f3c853b234a470daf3013a628da827f1b",
+      "bytes": 158788
+    },
+    "outputs/figures/04_area_price_comparison.pdf": {
+      "sha256": "d6098d5d2a7638943445922331aa8a741e5f69b49bafb496f04c89204fb44d12",
+      "bytes": 21487
+    },
+    "outputs/figures/05_data_coverage.pdf": {
+      "sha256": "053f26d45fc461a403b45d2cfa61af986a9ce64a7d66618a48ea19759b6f8483",
+      "bytes": 21514
+    },
+    "outputs/figures/08_airbnb_and_active_bonds.pdf": {
+      "sha256": "a89a97a27acf2051058965a8fcab54589088ee4686a1aec614a4a4bc0337d117",
+      "bytes": 21771
+    },
+    "outputs/figures/06_spatial_price_gaps.pdf": {
+      "sha256": "0ef26c93ddf5de00249ffabb12f0bfeb0cb95eb63fb3a34fcb3514a6d12cfbec",
+      "bytes": 946786
+    },
+    "outputs/figures/02_monthly_listing_counts.png": {
+      "sha256": "0f66ad5af6957ac001c57939e736e246ff25a571519968adbc2a1c4a462451d2",
+      "bytes": 125234
+    },
+    "outputs/figures/02_monthly_listing_counts.pdf": {
+      "sha256": "fdd5285cd3230fded2b94dd46f89a20bce8f72e053ce2dfffdfc0409ecdd9927",
+      "bytes": 19701
+    },
+    "outputs/figures/06_spatial_price_gaps.png": {
+      "sha256": "a0fec200505e93c047830d79896c495d227957f3590326fa00a3a15277097a48",
+      "bytes": 501962
+    },
+    "outputs/gis/christchurch_rental_comparison.gpkg": {
+      "sha256": "e0e8c68bdda5da061d4ddf1a49a3123df5c47bb862b28fcedb3ba6fc178f3f15",
+      "bytes": 20144128
+    }
+  },
+  "analysis_checks": {
+    "source_hashes_unchanged": true,
+    "unique_city_month_segment_keys": true,
+    "city_monthly_nightly_arithmetic": true,
+    "city_difference_of_medians_arithmetic": true,
+    "no_city_benchmark_in_listing_or_area_records": true,
+    "unique_listing_month_keys": true,
+    "only_christchurch_publisher_city": true,
+    "only_new_zealand_airbnb_sources": true,
+    "unique_bond_area_quarter_keys": true,
+    "no_listing_loss_or_inflation": true,
+    "correct_calendar_quarters": true,
+    "valid_positive_prices": true,
+    "valid_nightly_arithmetic": true,
+    "valid_gap_arithmetic": true,
+    "no_carry_forward_when_bond_missing": true,
+    "no_false_gap_without_price": true,
+    "only_city_area_codes": true,
+    "all_bond_rows_are_all_all": true,
+    "unique_area_month_segment_keys": true,
+    "ranking_uses_observed_gap_count": true,
+    "area_counts_reconcile_with_assigned_listings": true,
+    "source_id_precision_preserved": true
+  },
+  "export_checks": {
+    "excel_Airbnb merged_row_count": true,
+    "excel_Bond area quarter_row_count": true,
+    "excel_Bond category detail_row_count": true,
+    "excel_all_listing_ids_exact_text": true,
+    "excel_dataset_city_bond_rows": true,
+    "excel_area_monthly_row_count": true,
+    "excel_coverage_row_count": true,
+    "excel_city_bond_rows": true,
+    "excel_citywide_gaps_exact": true,
+    "excel_price_source_audit_months": true,
+    "excel_price_source_audit_values": true,
+    "sqlite_listing_count": true,
+    "sqlite_join_does_not_inflate": true
+  },
+  "scope_complete_snapshots": true,
+  "limitations": {
+    "price_missing_months": [
+      "2025-12",
+      "2026-01",
+      "2026-02"
+    ],
+    "bond_quarter_missing_months": [
+      "2026-07",
+      "2026-08"
+    ]
+  }
+}

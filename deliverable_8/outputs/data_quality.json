@@ -1,0 +1,91 @@
+{
+  "geography": {
+    "unique_coordinates": 4105,
+    "coordinates_assigned": 4102,
+    "coordinates_unassigned": 3,
+    "coordinate_boundary_flags": 2481,
+    "point_api_validation_available": true,
+    "polygon_count": 172
+  },
+  "bonds": {
+    "source_rows": 226080,
+    "rows_in_requested_quarters": 27212,
+    "invalid_or_missing_area_codes_excluded": 221,
+    "city_detailed_rows": 2538,
+    "city_all_all_rows": 410,
+    "exact_duplicates_removed": 0,
+    "available_quarters": [
+      "2025-10-01",
+      "2026-01-01",
+      "2026-04-01"
+    ],
+    "missing_main_rents": 0
+  },
+  "checks": {
+    "source_hashes_unchanged": true,
+    "unique_city_month_segment_keys": true,
+    "city_monthly_nightly_arithmetic": true,
+    "city_difference_of_medians_arithmetic": true,
+    "no_city_benchmark_in_listing_or_area_records": true,
+    "unique_listing_month_keys": true,
+    "only_christchurch_publisher_city": true,
+    "only_new_zealand_airbnb_sources": true,
+    "unique_bond_area_quarter_keys": true,
+    "no_listing_loss_or_inflation": true,
+    "correct_calendar_quarters": true,
+    "valid_positive_prices": true,
+    "valid_nightly_arithmetic": true,
+    "valid_gap_arithmetic": true,
+    "no_carry_forward_when_bond_missing": true,
+    "no_false_gap_without_price": true,
+    "only_city_area_codes": true,
+    "all_bond_rows_are_all_all": true,
+    "unique_area_month_segment_keys": true,
+    "ranking_uses_observed_gap_count": true,
+    "area_counts_reconcile_with_assigned_listings": true,
+    "source_id_precision_preserved": true
+  },
+  "airbnb_listing_months": 35796,
+  "unique_listing_ids": 4264,
+  "missing_airbnb_months": [],
+  "months_without_any_airbnb_prices": [
+    "2025-12",
+    "2026-01",
+    "2026-02"
+  ],
+  "months_without_bond_quarter": [
+    "2026-07",
+    "2026-08"
+  ],
+  "months_without_city_monthly_rent": [],
+  "airbnb_price_investigation": {
+    "checked_at_utc": "2026-10-15T04:05:13.261139+00:00",
+    "checked_snapshots": 11,
+    "recoverable_detail_prices": 0,
+    "calendar_christchurch_rows_checked": 3440867,
+    "all_null_months_verified_in_calendar": [
+      "2025-12",
+      "2026-01",
+      "2026-02"
+    ],
+    "audit_path": "Raw data/inside_airbnb_christchurch_checks/airbnb_price_recovery_audit.csv"
+  },
+  "export_checks": {
+    "excel_Airbnb merged_row_count": true,
+    "excel_Bond area quarter_row_count": true,
+    "excel_Bond category detail_row_count": true,
+    "excel_all_listing_ids_exact_text": true,
+    "excel_dataset_city_bond_rows": true,
+    "excel_area_monthly_row_count": true,
+    "excel_coverage_row_count": true,
+    "excel_city_bond_rows": true,
+    "excel_citywide_gaps_exact": true,
+    "excel_price_source_audit_months": true,
+    "excel_price_source_audit_values": true,
+    "sqlite_listing_count": true,
+    "sqlite_join_does_not_inflate": true
+  },
+  "latest_comparable_month": "2026-06",
+  "latest_airbnb_month": "2026-08",
+  "latest_citywide_comparison_month": "2026-08"
+}

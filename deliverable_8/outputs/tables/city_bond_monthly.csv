@@ -1,0 +1,12 @@
+snapshot_month,source_row,city_code,city_name,benchmark_geography,benchmark_frequency,city_bond_weekly_median_nzd,city_bond_weekly_geomean_nzd,city_bond_weekly_lower_quartile_nzd,city_bond_weekly_upper_quartile_nzd,city_bonds_lodged,city_active_bonds,city_closed_bonds,city_bond_nightly_equivalent_nzd,source_file
+2025-10,26230,060,Christchurch City,territorial_authority,monthly,550,523,475,630,1293,40749,1128,78.57142857,Raw data/detailed-monthly-tla-tenancy-october.csv
+2025-11,26298,060,Christchurch City,territorial_authority,monthly,570,570,495,700,1488,41751,480,81.42857143,Raw data/detailed-monthly-tla-tenancy-october.csv
+2025-12,26365,060,Christchurch City,territorial_authority,monthly,590,609,500,750,1509,42666,591,84.28571429,Raw data/detailed-monthly-tla-tenancy-october.csv
+2026-01,26433,060,Christchurch City,territorial_authority,monthly,580,565,495,688,1680,42783,1551,82.85714286,Raw data/detailed-monthly-tla-tenancy-october.csv
+2026-02,26500,060,Christchurch City,territorial_authority,monthly,550,523,460,650,1479,42561,1671,78.57142857,Raw data/detailed-monthly-tla-tenancy-october.csv
+2026-03,26567,060,Christchurch City,territorial_authority,monthly,550,524,475,645,1209,42573,1173,78.57142857,Raw data/detailed-monthly-tla-tenancy-october.csv
+2026-04,26634,060,Christchurch City,territorial_authority,monthly,550,530,480,650,1194,42816,909,78.57142857,Raw data/detailed-monthly-tla-tenancy-october.csv
+2026-05,26702,060,Christchurch City,territorial_authority,monthly,550,532,489,640,1191,42651,1311,78.57142857,Raw data/detailed-monthly-tla-tenancy-october.csv
+2026-06,26769,060,Christchurch City,territorial_authority,monthly,550,535,490,646,1071,42699,1023,78.57142857,Raw data/detailed-monthly-tla-tenancy-october.csv
+2026-07,26837,060,Christchurch City,territorial_authority,monthly,550,527,480,650,1191,42831,996,78.57142857,Raw data/detailed-monthly-tla-tenancy-october.csv
+2026-08,26905,060,Christchurch City,territorial_authority,monthly,550,530,480,644,1104,43026,864,78.57142857,Raw data/detailed-monthly-tla-tenancy-october.csv

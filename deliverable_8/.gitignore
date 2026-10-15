@@ -8,10 +8,8 @@ __pycache__/
 node_modules
 .DS_Store
 ~$*
-data/raw/
-data/cache/
-outputs/
-Raw data/*.csv
-listings*.csv
-*.sqlite
-*.gpkg
+# Preserve the source snapshots, geographic cache and completed deliverables.
+# Override the repository-wide docs/ ignore for this deliverable's methodology.
+!docs/
+data/cache/matplotlib/
+*.log

@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "run_completed": true,
+    "source_hashes_match": true,
+    "output_hashes_match": true,
+    "code_hashes_match": true,
+    "sqlite_calendar_quarters": true,
+    "sqlite_exact_bond_join": true,
+    "sqlite_gap_arithmetic": true,
+    "sqlite_null_prices_stay_null": true,
+    "citywide_monthly_comparisons_independent": true,
+    "july_august_suburb_gaps_stay_null": true,
+    "monthly_city_source_has_unique_months": true,
+    "only_christchurch_listing_records": true,
+    "source_audit_counts_reconcile": true,
+    "three_missing_months_checked_in_calendar": true,
+    "source_audit_no_false_completion": true,
+    "map_has_no_external_tile_layer": true,
+    "map_contains_monthly_city_comparisons": true,
+    "gpkg_point_count": true,
+    "gpkg_172_areas": true,
+    "no_api_key_in_outputs_or_cache": true
+  },
+  "all_passed": true,
+  "listing_month_count": 35796
+}

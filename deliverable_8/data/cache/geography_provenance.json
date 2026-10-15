@@ -1,0 +1,13 @@
+{
+  "retrieved_at_utc": "2026-10-15T03:18:12.207078+00:00",
+  "source": "https://services.koordinates.com/featuredata/layer/98779/",
+  "metadata_url": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/",
+  "point_query_layer_id": 98970,
+  "polygon_layer_id": 98779,
+  "vintage": "2019",
+  "territorial_authority_code": "060",
+  "crs": "EPSG:4326",
+  "polygon_count": 172,
+  "sha256": "800ea6b8c685ced33d1f35598e177fae6b68028a1c5ced76cb3f71cd870f9f1c",
+  "probe_area_code": "326600"
+}

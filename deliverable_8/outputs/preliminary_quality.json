@@ -1,0 +1,23 @@
+{
+  "geography": {
+    "unique_coordinates": 4105,
+    "coordinates_assigned": 4102,
+    "coordinates_unassigned": 3,
+    "coordinate_boundary_flags": 433,
+    "point_api_validation_available": true
+  },
+  "bonds": {
+    "source_rows": 226080,
+    "rows_in_requested_quarters": 27212,
+    "invalid_or_missing_area_codes_excluded": 221,
+    "city_detailed_rows": 2538,
+    "city_all_all_rows": 410,
+    "exact_duplicates_removed": 0,
+    "available_quarters": [
+      "2025-10-01",
+      "2026-01-01",
+      "2026-04-01"
+    ],
+    "missing_main_rents": 0
+  }
+}

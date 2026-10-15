@@ -1,0 +1,107 @@
+{
+  "checked_at_nz": "2026-10-15T17:12:11.619386+13:00",
+  "regenerated_files": [
+    {
+      "file": "outputs/figures/01_monthly_price_benchmarks.pdf",
+      "modified_nz": "2026-10-15T17:11:42.888714+13:00",
+      "bytes": 23074
+    },
+    {
+      "file": "outputs/figures/01_monthly_price_benchmarks.png",
+      "modified_nz": "2026-10-15T17:11:42.783826+13:00",
+      "bytes": 142213
+    },
+    {
+      "file": "outputs/figures/02_monthly_listing_counts.pdf",
+      "modified_nz": "2026-10-15T17:11:43.056384+13:00",
+      "bytes": 19701
+    },
+    {
+      "file": "outputs/figures/02_monthly_listing_counts.png",
+      "modified_nz": "2026-10-15T17:11:42.997542+13:00",
+      "bytes": 125234
+    },
+    {
+      "file": "outputs/figures/03_largest_area_price_gaps.pdf",
+      "modified_nz": "2026-10-15T17:11:43.260967+13:00",
+      "bytes": 22313
+    },
+    {
+      "file": "outputs/figures/03_largest_area_price_gaps.png",
+      "modified_nz": "2026-10-15T17:11:43.191183+13:00",
+      "bytes": 148629
+    },
+    {
+      "file": "outputs/figures/04_area_price_comparison.pdf",
+      "modified_nz": "2026-10-15T17:11:43.452949+13:00",
+      "bytes": 21487
+    },
+    {
+      "file": "outputs/figures/04_area_price_comparison.png",
+      "modified_nz": "2026-10-15T17:11:43.385845+13:00",
+      "bytes": 116185
+    },
+    {
+      "file": "outputs/figures/05_data_coverage.pdf",
+      "modified_nz": "2026-10-15T17:11:43.633581+13:00",
+      "bytes": 21514
+    },
+    {
+      "file": "outputs/figures/05_data_coverage.png",
+      "modified_nz": "2026-10-15T17:11:43.572571+13:00",
+      "bytes": 158788
+    },
+    {
+      "file": "outputs/figures/06_spatial_price_gaps.pdf",
+      "modified_nz": "2026-10-15T17:11:44.270213+13:00",
+      "bytes": 946786
+    },
+    {
+      "file": "outputs/figures/06_spatial_price_gaps.png",
+      "modified_nz": "2026-10-15T17:11:44.058248+13:00",
+      "bytes": 501962
+    },
+    {
+      "file": "outputs/figures/07_spatial_price_bars.pdf",
+      "modified_nz": "2026-10-15T17:11:44.994095+13:00",
+      "bytes": 932210
+    },
+    {
+      "file": "outputs/figures/07_spatial_price_bars.png",
+      "modified_nz": "2026-10-15T17:11:44.755883+13:00",
+      "bytes": 557378
+    },
+    {
+      "file": "outputs/figures/08_airbnb_and_active_bonds.pdf",
+      "modified_nz": "2026-10-15T17:11:45.215620+13:00",
+      "bytes": 21771
+    },
+    {
+      "file": "outputs/figures/08_airbnb_and_active_bonds.png",
+      "modified_nz": "2026-10-15T17:11:45.136046+13:00",
+      "bytes": 148968
+    },
+    {
+      "file": "outputs/figures/09_july_august_citywide_comparison.pdf",
+      "modified_nz": "2026-10-15T17:11:45.380204+13:00",
+      "bytes": 23118
+    },
+    {
+      "file": "outputs/figures/09_july_august_citywide_comparison.png",
+      "modified_nz": "2026-10-15T17:11:45.320979+13:00",
+      "bytes": 120809
+    },
+    {
+      "file": "outputs/excel/christchurch_merged_datasets.xlsx",
+      "modified_nz": "2026-10-15T17:11:53.083796+13:00",
+      "bytes": 8142415
+    },
+    {
+      "file": "outputs/excel/christchurch_rental_analysis.xlsx",
+      "modified_nz": "2026-10-15T17:11:46.244870+13:00",
+      "bytes": 707914
+    }
+  ],
+  "all_20_files_rewritten": true,
+  "workbook_contents_verified": true
+}

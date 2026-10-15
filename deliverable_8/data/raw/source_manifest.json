@@ -1,0 +1,277 @@
+{
+  "retrieved_at_utc": "2026-10-15T03:38:30.938644+00:00",
+  "scope": {
+    "start_month": "2025-10",
+    "end_month": "2026-08"
+  },
+  "airbnb": [
+    {
+      "path": "data/raw/airbnb/2025-10-05_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2025-10-05/visualisations/listings.csv",
+      "sha256": "88dadd87d46d3d5a2c8772985c7b864ba4070170b5408a58551fb53bf3085366",
+      "bytes": 8323924,
+      "snapshot_date": "2025-10-05",
+      "snapshot_month": "2025-10",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": null
+    },
+    {
+      "path": "data/raw/airbnb/2025-11-07_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2025-11-07/visualisations/listings.csv",
+      "sha256": "60ed7b8475b4e3c67f12856e5c0876a9e39197b38920a2679e6527a29a5ab7cc",
+      "bytes": 8483903,
+      "snapshot_date": "2025-11-07",
+      "snapshot_month": "2025-11",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": "20251107024032"
+    },
+    {
+      "path": "data/raw/airbnb/2025-12-11_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2025-12-11/visualisations/listings.csv",
+      "sha256": "85836bbe19745285952b7f964eb606c831c897af239b1837994e45a5496ea152",
+      "bytes": 8577926,
+      "snapshot_date": "2025-12-11",
+      "snapshot_month": "2025-12",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": "20251211043544"
+    },
+    {
+      "path": "data/raw/airbnb/2026-01-16_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-01-16/visualisations/listings.csv",
+      "sha256": "1de79c6480eb4c212fade8d0595037be9bd60d81720078ac54b637bbae8c02a9",
+      "bytes": 8109945,
+      "snapshot_date": "2026-01-16",
+      "snapshot_month": "2026-01",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": "20260116025119"
+    },
+    {
+      "path": "data/raw/airbnb/2026-02-13_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-02-13/visualisations/listings.csv",
+      "sha256": "5bc2f802d519dbca0fc5a2912bb489573196ef7f89891bfe3b213ffd2f73bf10",
+      "bytes": 8445142,
+      "snapshot_date": "2026-02-13",
+      "snapshot_month": "2026-02",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": "20260213082401"
+    },
+    {
+      "path": "data/raw/airbnb/2026-03-17_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-03-17/visualisations/listings.csv",
+      "sha256": "52a94be044cda291ffaace19736ed5af1bfd3a39be5b18d46ad7039110030cf6",
+      "bytes": 8663250,
+      "snapshot_date": "2026-03-17",
+      "snapshot_month": "2026-03",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": "20260317022623"
+    },
+    {
+      "path": "data/raw/airbnb/2026-04-16_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-04-16/visualisations/listings.csv",
+      "sha256": "289376f0e88e514580c7e6208adb627d67e0fec5f95321bd832436f3194b5089",
+      "bytes": 8649033,
+      "snapshot_date": "2026-04-16",
+      "snapshot_month": "2026-04",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": "20260416055825"
+    },
+    {
+      "path": "data/raw/airbnb/2026-05-23_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-05-23/visualisations/listings.csv",
+      "sha256": "9bbe38cbc0f67f4c4bdf5df42a6b2b819555b0db65124a24401c600c8e776079",
+      "bytes": 8717734,
+      "snapshot_date": "2026-05-23",
+      "snapshot_month": "2026-05",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": "20260523233653"
+    },
+    {
+      "path": "data/raw/airbnb/2026-06-19_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-06-19/visualisations/listings.csv",
+      "sha256": "8ef2331bef35aeff354892f06950c447cb32c216fba27614880fd23698edec8d",
+      "bytes": 9006627,
+      "snapshot_date": "2026-06-19",
+      "snapshot_month": "2026-06",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": "20260619054827"
+    },
+    {
+      "path": "data/raw/airbnb/2026-07-12_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-07-12/visualisations/listings.csv",
+      "sha256": "8d12d28d7a951d877df0d375923bc49b78bfbc0dd33312ddfebab0580d0c2736",
+      "bytes": 9045003,
+      "snapshot_date": "2026-07-12",
+      "snapshot_month": "2026-07",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": "20260712215645"
+    },
+    {
+      "path": "data/raw/airbnb/2026-08-13_listings.csv",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-08-13/visualisations/listings.csv",
+      "sha256": "1528fa122cdc78d41e8ea95d00b3a358335b2b0ef2248a76250e12ea9b3db15e",
+      "bytes": 9091701,
+      "snapshot_date": "2026-08-13",
+      "snapshot_month": "2026-08",
+      "source": "Inside Airbnb",
+      "publisher_scrape_id": "20260813020733"
+    }
+  ],
+  "bonds": {
+    "path": "data/raw/tenancy/quarterly_b40a39a0ce899362.csv",
+    "url": "https://www.tenancy.govt.nz/assets/Uploads/Tenancy/Rental-bond-data/Detailed-Quarterly-Tenancy-Q1-2020-Q3-2026.csv?m=5766222a0dc2d94c11545872be77333e32f7c999",
+    "sha256": "b40a39a0ce899362df5da729ed38cf8962cc31058910693aa2301feb9d0be80e",
+    "bytes": 13199634,
+    "source": "MBIE Tenancy Services",
+    "publisher_label": "Detailed quarterly report, January 2020 to April 2026 [CSV, 13 MB]",
+    "source_page": "https://www.tenancy.govt.nz/about-tenancy-services/data-and-statistics/rental-bond-data/"
+  },
+  "missing_airbnb_months": [],
+  "source_pages": [
+    "https://insideairbnb.com/get-the-data/",
+    "https://www.tenancy.govt.nz/about-tenancy-services/data-and-statistics/rental-bond-data/"
+  ],
+  "city_monthly_bonds": {
+    "category": "monthly_territorial_authority",
+    "path": "Raw data/detailed-monthly-tla-tenancy-october.csv",
+    "publisher_label": "By territorial authority, February 1993 to August 2026 [CSV, 2.3 MB]",
+    "url": "https://www.tenancy.govt.nz/assets/Uploads/Tenancy/Rental-bond-data/detailed-monthly-tla-tenancy-october.csv?m=e7e9c47ce8c12eedd40ee1e4534398d28f5643e2",
+    "sha256": "7d163430409c6ebdeec52b28ebd3fb65787ca68e7c65551c62648a094bec756b",
+    "bytes": 2360379,
+    "rows": 26918,
+    "columns": [
+      "Time Frame",
+      "Location Id",
+      "Location",
+      "Lodged Bonds",
+      "Active Bonds",
+      "Closed Bonds",
+      "Median Rent",
+      "Geometric Mean Rent",
+      "Upper Quartile Rent",
+      "Lower Quartile Rent",
+      "Log Std Dev Weekly Rent"
+    ],
+    "encoding": "utf-8-sig",
+    "date_field": "Time Frame",
+    "first_timeframe": "1993-02-01",
+    "last_timeframe": "2026-08-01",
+    "requested_late_periods_present": [
+      "2026-07-01",
+      "2026-08-01"
+    ],
+    "christchurch_rows": 403,
+    "christchurch_last_timeframe": "2026-08-01",
+    "source": "MBIE Tenancy Services monthly TA data",
+    "source_page": "https://www.tenancy.govt.nz/about-tenancy-services/data-and-statistics/rental-bond-data/"
+  },
+  "airbnb_price_investigation_sources": [
+    {
+      "path": "data/raw/airbnb/calendar/2025-12-11_calendar.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2025-12-11/data/calendar.csv.gz",
+      "sha256": "fd5a05bc210422f67727d15019fde19b685b8bb0bdee63e27d9979c734b389b4",
+      "bytes": 44191453,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/calendar/2026-01-16_calendar.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-01-16/data/calendar.csv.gz",
+      "sha256": "e440430d2b5cd677206cd263008a8a0b977efc0dfd186d8b3c755b3134d9ba41",
+      "bytes": 41299104,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/calendar/2026-02-13_calendar.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-02-13/data/calendar.csv.gz",
+      "sha256": "f06ab49076fd5e84efca841ffe517b16994899cae60aaed526e4bdda2e5bb222",
+      "bytes": 42415310,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2025-10-05_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2025-10-05/data/listings.csv.gz",
+      "sha256": "7ad9aaecf763f1688cda2e65d93be7b3f38171ece922111510a2c68294cee019",
+      "bytes": 28237848,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2025-11-07_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2025-11-07/data/listings.csv.gz",
+      "sha256": "89bb93bdb76e309feaa5bafdd3e0ad9cb5ab1fdf04571059f72398b864200e86",
+      "bytes": 29687314,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2025-12-11_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2025-12-11/data/listings.csv.gz",
+      "sha256": "ff69b66e4fd19719c513bf17b6b1772220c37e171071e1c162d1e8cf28f00b46",
+      "bytes": 26874363,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2026-01-16_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-01-16/data/listings.csv.gz",
+      "sha256": "0ab0c1ff4c902a949f7f69c958c1f045dcf47118dd601214ec150bc335765db4",
+      "bytes": 24388992,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2026-02-13_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-02-13/data/listings.csv.gz",
+      "sha256": "9fbdb903a1b8eb9ca302f8b2b5a45a4e6150dd6d65d0e07a70509a17793e4e39",
+      "bytes": 25233085,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2026-03-17_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-03-17/data/listings.csv.gz",
+      "sha256": "7980609efb50cfbf8fb236c43b08c8f8a26c360a3deb197ba40e4fad2b855eab",
+      "bytes": 29363935,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2026-04-16_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-04-16/data/listings.csv.gz",
+      "sha256": "ab7a6daa95ab5e647756e05f08910155ea6393f0bb618aba88ec1543ff673e5b",
+      "bytes": 29296468,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2026-05-23_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-05-23/data/listings.csv.gz",
+      "sha256": "349eba46eed251bc3b6f2c9a1e18de9e81b3ba2fc3f63ff24b3cc1119947f0af",
+      "bytes": 31634514,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2026-06-19_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-06-19/data/listings.csv.gz",
+      "sha256": "4c5e67e3992ae0eaa161c4a3a6a212f177b765cec4136d6120efb7bdfda2b382",
+      "bytes": 32368718,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2026-07-12_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-07-12/data/listings.csv.gz",
+      "sha256": "e956b756bb0126e0a6adab9739401f64e6dc20b8d8a91b244491ca7341d75b29",
+      "bytes": 32692431,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "data/raw/airbnb/detailed/2026-08-13_listings.csv.gz",
+      "url": "https://data.insideairbnb.com/new-zealand/2026-08-13/data/listings.csv.gz",
+      "sha256": "2b76dc4d129451f883611093ac81e9e1cc40e8453a617e0e740d4c0f9138eb5d",
+      "bytes": 33116256,
+      "source": "Inside Airbnb price-gap investigation"
+    },
+    {
+      "path": "Raw data/inside_airbnb_christchurch_checks/airbnb_price_recovery_audit.csv",
+      "sha256": "5212dee8fb5347a538fc601cef91d6c20881203a311f2aefeaced5a4b3162447",
+      "source": "Christchurch same-snapshot price recovery audit"
+    },
+    {
+      "path": "Raw data/inside_airbnb_christchurch_checks/investigation_manifest.json",
+      "sha256": "7410d9b2ca768a45a14b9274b0d02913eaed687c99e065b88e6ebde30e1191e4",
+      "source": "Christchurch source investigation manifest"
+    }
+  ]
+}

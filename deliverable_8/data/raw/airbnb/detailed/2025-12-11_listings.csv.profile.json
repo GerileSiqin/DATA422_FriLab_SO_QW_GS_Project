@@ -1,0 +1,33 @@
+{
+  "date": "2025-12-11",
+  "path": "data/raw/airbnb/detailed/2025-12-11_listings.csv.gz",
+  "url": "https://data.insideairbnb.com/new-zealand/2025-12-11/data/listings.csv.gz",
+  "sha256": "ff69b66e4fd19719c513bf17b6b1772220c37e171071e1c162d1e8cf28f00b46",
+  "bytes": 26874363,
+  "national_rows": 49899,
+  "city_summary_ids": 3180,
+  "matched_city_rows": 3180,
+  "nonnull_city_prices": 0,
+  "national_nonnull_prices": 0,
+  "city_region_names": {
+    "Central Ward": 1121,
+    "Banks Peninsula Ward": 391,
+    "Heathcote Ward": 242,
+    "Riccarton Ward": 216,
+    "Fendalton Ward": 190,
+    "Spreydon Ward": 119,
+    "Cashmere Ward": 118,
+    "Halswell Ward": 118,
+    "Innes Ward": 110,
+    "Harewood Ward": 107,
+    "Coastal Ward": 102,
+    "Waimairi Ward": 97,
+    "Papanui Ward": 73,
+    "Linwood Ward": 69,
+    "Hornby Ward": 68,
+    "Burwood Ward": 39
+  },
+  "city_region_parent_names": {
+    "Christchurch City": 3180
+  }
+}

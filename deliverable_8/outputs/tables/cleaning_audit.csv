@@ -1,0 +1,12 @@
+snapshot_month,source_rows,city_rows_before_cleaning,exact_duplicates_removed,invalid_key_or_coordinates_removed,retained_rows,missing_or_invalid_prices_retained,nonpositive_prices_set_missing,availability_invalid,review_after_snapshot,high_prices_flagged_retained
+2025-10,47752,2991,0,0,2991,170,0,0,72,30
+2025-11,48624,3047,0,0,3047,212,0,0,280,30
+2025-12,49899,3180,0,0,3180,3180,0,0,11,0
+2026-01,46819,3057,0,0,3057,3057,0,0,483,0
+2026-02,48692,3190,0,0,3190,3190,0,0,207,0
+2026-03,49076,3227,0,0,3227,168,0,0,211,32
+2026-04,48951,3273,0,0,3273,204,0,0,401,33
+2026-05,49305,3361,0,0,3361,212,0,0,33,33
+2026-06,50932,3469,0,0,3469,274,0,0,47,34
+2026-07,51096,3488,0,0,3488,315,0,0,79,33
+2026-08,51325,3513,0,0,3513,336,0,0,0,34

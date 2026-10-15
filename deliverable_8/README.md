@@ -4,6 +4,8 @@ This project builds a reproducible comparison of Airbnb asking prices and privat
 
 All code, inputs, caches and outputs are contained in this folder. The supplied files in `Raw data/` and the original June listing file are preserved. Airbnb source downloads are stored separately in `data/raw/`; downloaded monthly tenancy releases and their manifest are in `Raw data/`.
 
+The GitHub copy includes the versioned source files, geographic cache, methodology documents and completed outputs linked below. The virtual environment, API credentials, editor settings and temporary files remain local. After installing the requirements, a fresh clone can rebuild from the included inputs without a Koordinates key or network access.
+
 ## Open the results
 
 - [Analysis workbook](outputs/excel/christchurch_rental_analysis.xlsx): overview, a dedicated July/August citywide comparison, monthly trends, area comparisons, sensitivity groups, coverage, cleaning audit and a **Price recovery check** sheet.
@@ -26,7 +28,7 @@ The source comparison CSVs and Christchurch-only detailed/calendar extracts are 
 
 ## Run in VS Code
 
-The workspace selects `.venv/bin/python`. In the VS Code terminal, run:
+Select `.venv/bin/python` as the VS Code Python interpreter. In the VS Code terminal, run:
 
 ```bash
 .venv/bin/python run_pipeline.py
@@ -43,10 +45,9 @@ For another computer, use Python 3.12:
 ```bash
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
-cp .env.example .env
 ```
 
-Enter the Koordinates key in `.env` and run with `--download`. Keep `.env` local. The map uses locally stored Leaflet assets, polygons, place labels and a distance scale. It makes no external basemap tile requests, avoiding the blocked OpenStreetMap tile response. The map can be opened directly from disk. An optional local server is:
+Then run `.venv/bin/python run_pipeline.py` from this folder to use the included source snapshots and geographic cache. To refresh sources and perform live API validation, copy `.env.example` to `.env`, enter the Koordinates key and run with `--download`. Keep `.env` local. The map uses locally stored Leaflet assets, polygons, place labels and a distance scale. It makes no external basemap tile requests, avoiding the blocked OpenStreetMap tile response. The map can be opened directly from disk. An optional local server is:
 
 ```bash
 .venv/bin/python -m http.server 8765 --bind 127.0.0.1 --directory outputs

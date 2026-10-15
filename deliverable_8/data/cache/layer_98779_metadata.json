@@ -1,0 +1,307 @@
+{
+  "id": 98779,
+  "url": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/",
+  "type": "layer",
+  "title": "Statistical Area 2 Higher Geographies 2019 (generalised)",
+  "first_published_at": "2018-12-03T03:18:39.594584Z",
+  "thumbnail_url": "https://tiles-cdn.koordinates.com/services/tiles/v4/thumbnail/layer=98779.335020,style=auto/1200x630.png",
+  "published_at": "2020-06-29T02:35:58.450686Z",
+  "featured_at": null,
+  "services": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/services/",
+  "user_capabilities": [
+    "can-star",
+    "can-export",
+    "can-spatial-query",
+    "can-view-data-table"
+  ],
+  "user_permissions": [
+    "find",
+    "view",
+    "download"
+  ],
+  "description": "This dataset is the definitive version of statistical area 2 (SA2) boundaries concorded to higher geographies as at 1 January 2019 as defined by Stats NZ.\r\n\r\nThis statistical area 2 higher geographies file is a correspondence, or concordance, which relates SA2s to larger geographic areas or 'higher geographies'. The higher geographies contained in this concordance are: territorial authority (TA) and regional council (REGC).\r\n\r\nStatistical area 2 was created as part of the Statistical Standard for Geographic Areas 2018 (SSGA18) which replaces the 1992 New Zealand Standard Areas Classification (NZSAC92). The statistical standard for geographic areas is to be used from 2018 (SSGA18). It defines the Stats NZ input and output geographic classifications and describes their primary purposes, and sets out requirements and guidelines for the creation and maintenance of statistical geographies.\r\n\r\nStatistical area 2 (SA2) provides higher aggregations of population data than can be provided at the statistical area 1 (SA1) level. The SA2 geography aims to reflect communities that interact together socially and economically. In populated areas, SA2s generally contain similar sized populations.\r\n\r\nDigital boundary data became freely available on 1 July 2007. This generalised version has been simplified for rapid drawing and is designed for thematic or web mapping purposes.",
+  "description_html": "<p>This dataset is the definitive version of statistical area 2 (SA2) boundaries concorded to higher geographies as at 1 January 2019 as defined by Stats NZ.  </p>\n<p>This statistical area 2 higher geographies file is a correspondence, or concordance, which relates SA2s to larger geographic areas or 'higher geographies'. The higher geographies contained in this concordance are: territorial authority (TA) and regional council (REGC).  </p>\n<p>Statistical area 2 was created as part of the Statistical Standard for Geographic Areas 2018 (SSGA18) which replaces the 1992 New Zealand Standard Areas Classification (NZSAC92). The statistical standard for geographic areas is to be used from 2018 (SSGA18). It defines the Stats NZ input and output geographic classifications and describes their primary purposes, and sets out requirements and guidelines for the creation and maintenance of statistical geographies.  </p>\n<p>Statistical area 2 (SA2) provides higher aggregations of population data than can be provided at the statistical area 1 (SA1) level. The SA2 geography aims to reflect communities that interact together socially and economically. In populated areas, SA2s generally contain similar sized populations.  </p>\n<p>Digital boundary data became freely available on 1 July 2007. This generalised version has been simplified for rapid drawing and is designed for thematic or web mapping purposes.</p>",
+  "group": {
+    "id": 409,
+    "url": "https://datafinder.stats.govt.nz/services/api/v1/groups/409/",
+    "name": "GIS",
+    "country": "NZ",
+    "org": "https://datafinder.stats.govt.nz/services/api/v1/orgs/o3MzyVCb7p9cSYX/",
+    "type": "normal"
+  },
+  "data": {
+    "storage": "classic",
+    "datasources": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/datasources/",
+    "fields": [
+      {
+        "name": "Shape",
+        "type": "geometry"
+      },
+      {
+        "name": "SA22019_V1_00",
+        "type": "string"
+      },
+      {
+        "name": "SA22019_V1_00_NAME",
+        "type": "string"
+      },
+      {
+        "name": "TA2019_V1_00",
+        "type": "string"
+      },
+      {
+        "name": "TA2019_V1_00_NAME",
+        "type": "string"
+      },
+      {
+        "name": "REGC2019_V1_00",
+        "type": "string"
+      },
+      {
+        "name": "REGC2019_V1_00_NAME",
+        "type": "string"
+      },
+      {
+        "name": "LAND_AREA_SQ_KM",
+        "type": "double"
+      },
+      {
+        "name": "AREA_SQ_KM",
+        "type": "double"
+      },
+      {
+        "name": "Shape_Length",
+        "type": "double"
+      },
+      {
+        "name": "Shape_Area",
+        "type": "double"
+      }
+    ],
+    "encoding": null,
+    "crs": "EPSG:2193",
+    "primary_key_fields": [],
+    "geometry_field": "Shape",
+    "geometry_type": "multipolygon",
+    "omitted_fields": [],
+    "tile_revision": 335020,
+    "feature_count": 2255,
+    "crs_display": "NZGD2000 / New Zealand Transverse Mercator 2000",
+    "extent": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            165.97364377063664,
+            -47.620123575293604
+          ],
+          [
+            165.97364377063664,
+            -33.95849709963594
+          ],
+          [
+            184.6209527520974,
+            -33.95849709963594
+          ],
+          [
+            184.6209527520974,
+            -47.620123575293604
+          ],
+          [
+            165.97364377063664,
+            -47.620123575293604
+          ]
+        ]
+      ]
+    },
+    "datasource_count": 1,
+    "change_summary": {
+      "inserted": 2255,
+      "updated": 0,
+      "deleted": 2255,
+      "schema_changes": {
+        "added": [],
+        "changed": [],
+        "removed": [
+          {
+            "name": "LANDWATER",
+            "type": "string"
+          },
+          {
+            "name": "LANDWATER_NAME",
+            "type": "string"
+          }
+        ],
+        "srid_changed": false,
+        "geometry_type_changed": false,
+        "primary_keys_changed": false
+      }
+    },
+    "source_summary": {
+      "formats": [
+        "Geodatabase"
+      ],
+      "types": [
+        "Upload"
+      ]
+    },
+    "import_started_at": "2020-06-29T02:33:11.059257Z",
+    "import_ended_at": "2020-06-29T02:34:05.201766Z",
+    "import_log": {
+      "invalid_geometries": 0,
+      "messages": 0,
+      "url": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/data/import-log/"
+    },
+    "import_version": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/",
+    "update_available": false,
+    "sample": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/data/sample/",
+    "raster_resolution": null,
+    "empty_geometry_count": 16,
+    "has_z": false,
+    "export_formats": [
+      {
+        "name": "Shapefile",
+        "mimetype": "application/x-zipped-shp"
+      },
+      {
+        "name": "MapInfo TAB",
+        "mimetype": "application/x-ogc-mapinfo_file"
+      },
+      {
+        "name": "MapInfo MIF",
+        "mimetype": "application/x-ogc-mapinfo_file+mif"
+      },
+      {
+        "name": "CSV",
+        "mimetype": "text/csv"
+      },
+      {
+        "name": "GeoPackage / SQLite",
+        "mimetype": "application/x-ogc-gpkg"
+      },
+      {
+        "name": "Geodatabase",
+        "mimetype": "applicaton/x-ogc-filegdb"
+      },
+      {
+        "name": "KML",
+        "mimetype": "application/vnd.google-earth.kml+xml"
+      },
+      {
+        "name": "DWG",
+        "mimetype": "image/vnd.dwg"
+      },
+      {
+        "name": "PDF",
+        "mimetype": "application/pdf"
+      }
+    ],
+    "bands": null
+  },
+  "url_html": "https://datafinder.stats.govt.nz/layer/98779-statistical-area-2-higher-geographies-2019-generalised/",
+  "url_canonical": "https://datafinder.stats.govt.nz/layer/98779-statistical-area-2-higher-geographies-2019-generalised/",
+  "published_version": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/",
+  "this_version": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/",
+  "kind": "vector",
+  "categories": [
+    {
+      "name": "2019",
+      "slug": "2019",
+      "key": "annual-boundaries/2019",
+      "url": "https://datafinder.stats.govt.nz/services/api/v1/categories/annual-boundaries/2019/",
+      "ancestors": [
+        {
+          "name": "Annual Boundaries",
+          "slug": "annual-boundaries",
+          "key": "annual-boundaries",
+          "url": "https://datafinder.stats.govt.nz/services/api/v1/categories/annual-boundaries/"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "Statistical Area 2",
+    "SA2",
+    "statistical area 2",
+    "TA",
+    "territorial authority",
+    "REGC",
+    "regional council",
+    "Stats NZ",
+    "higher geography"
+  ],
+  "collected_at": null,
+  "created_at": "2018-12-03T03:08:09.067540Z",
+  "license": {
+    "id": 171,
+    "title": "Creative Commons Attribution 4.0 International",
+    "type": "cc-by",
+    "jurisdiction": "",
+    "version": "4.0",
+    "url": "https://datafinder.stats.govt.nz/services/api/v1/licenses/171/",
+    "url_html": "https://datafinder.stats.govt.nz/license/attribution-4-0-international/",
+    "url_fulltext": "https://datafinder.stats.govt.nz/services/api/v1/licenses/171/fulltext/"
+  },
+  "metadata": {
+    "resource": "https://datafinder.stats.govt.nz/services/api/v1/sources/230739/metadata-resources/11774/",
+    "native": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/metadata/",
+    "iso": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/metadata/iso/",
+    "dc": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/metadata/dc/"
+  },
+  "elevation_field": "",
+  "styles": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/styles/",
+  "vector_styles": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/vector-styles/",
+  "client_styles": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/client-styles/",
+  "default_style": null,
+  "attachments": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/attachments/",
+  "settings": {
+    "is_pinned": null,
+    "feedback_enabled": false,
+    "is_source_mirror": false
+  },
+  "repository": {
+    "id": "V8X1kE3",
+    "full_name": "statsnz/statistical-area-2-higher-geographies-2019-generalised",
+    "url": "https://datafinder.stats.govt.nz/services/api/v1/repos/statsnz/statistical-area-2-higher-geographies-2019-generalised/",
+    "clone_location_ssh": "kart@data.koordinates.com:statsnz/statistical-area-2-higher-geographies-2019-generalised",
+    "clone_location_https": "https://data.koordinates.com/statsnz/statistical-area-2-higher-geographies-2019-generalised",
+    "type": "repo",
+    "title": "Statistical Area 2 Higher Geographies 2019 (generalised)",
+    "first_published_at": "2023-08-09T14:00:58.726648Z",
+    "published_at": null,
+    "settings": {
+      "feedback_enabled": false
+    },
+    "user_capabilities": [
+      "can-star",
+      "can-clone"
+    ],
+    "user_permissions": [
+      "find",
+      "view",
+      "download"
+    ]
+  },
+  "geotags": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/geotags/",
+  "num_views": 5525,
+  "num_downloads": 126,
+  "public_access": "download",
+  "version": {
+    "id": 299897,
+    "url": "https://datafinder.stats.govt.nz/services/api/v1/layers/98779/versions/299897/",
+    "status": "ok",
+    "created_at": "2020-06-29T02:33:05.720057Z",
+    "created_by": {
+      "id": 24356,
+      "url": "https://datafinder.stats.govt.nz/services/api/v1/users/24356/",
+      "first_name": "Rachel",
+      "last_name": "Livingston",
+      "country": "NZ",
+      "geotag": "global/oceania/new-zealand"
+    },
+    "reference": "",
+    "progress": 1.0,
+    "data_import": true,
+    "data_published_at": "2020-06-29T02:35:58.450686Z"
+  }
+}

@@ -1,0 +1,12 @@
+snapshot_month,quarter_start,snapshot_rows,observed_prices,missing_prices,all_prices_missing,assigned_location_rows,unassigned_location_rows,matched_bond_rows,usable_price_gaps,near_boundary_rows,bond_quarter_available,city_bond_weekly_median_nzd,city_monthly_bond_available,detail_observed_prices,recoverable_detail_prices,recovery_status
+2025-10,2025-10-01,2991,2821,170,False,2989,2,2475,2329,1815,True,550,True,2821,0,no_additional_same_snapshot_listing_prices
+2025-11,2025-10-01,3047,2835,212,False,3045,2,2520,2334,1851,True,570,True,2835,0,no_additional_same_snapshot_listing_prices
+2025-12,2025-10-01,3180,0,3180,True,3178,2,2644,0,1946,True,590,True,0,0,source_prices_absent_in_summary_detail_calendar
+2026-01,2026-01-01,3057,0,3057,True,3055,2,2654,0,1894,True,580,True,0,0,source_prices_absent_in_summary_detail_calendar
+2026-02,2026-01-01,3190,0,3190,True,3187,3,2779,0,1977,True,550,True,0,0,source_prices_absent_in_summary_detail_calendar
+2026-03,2026-01-01,3227,3059,168,False,3225,2,2813,2691,1994,True,550,True,3059,0,no_additional_same_snapshot_listing_prices
+2026-04,2026-04-01,3273,3069,204,False,3271,2,2804,2651,2013,True,550,True,3069,0,no_additional_same_snapshot_listing_prices
+2026-05,2026-04-01,3361,3149,212,False,3359,2,2880,2712,2077,True,550,True,3149,0,no_additional_same_snapshot_listing_prices
+2026-06,2026-04-01,3469,3195,274,False,3467,2,2982,2754,2143,True,550,True,3195,0,no_additional_same_snapshot_listing_prices
+2026-07,2026-07-01,3488,3173,315,False,3486,2,0,0,2155,False,550,True,3173,0,no_additional_same_snapshot_listing_prices
+2026-08,2026-07-01,3513,3177,336,False,3511,2,0,0,2179,False,550,True,3177,0,no_additional_same_snapshot_listing_prices
