@@ -1,0 +1,14 @@
+{
+  "start_month": "2025-10",
+  "end_month": "2026-08",
+  "city": "Christchurch City",
+  "sa2_layer_id": 98970,
+  "sa2_code_field": "SA22019_V1_00",
+  "sa2_name_field": "SA22019_V1_00_NAME",
+  "geography_vintage": "2019",
+  "city_geography_layer_id": 98779,
+  "additional_archive_dates": ["2025-10-05"],
+  "minimum_priced_listings": 5,
+  "maximum_short_stay_minimum_nights": 30,
+  "boundary_warning_metres": 150
+}

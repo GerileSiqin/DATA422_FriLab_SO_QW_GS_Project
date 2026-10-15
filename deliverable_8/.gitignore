@@ -1,0 +1,17 @@
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+.qa/
+node_modules
+.DS_Store
+~$*
+data/raw/
+data/cache/
+outputs/
+Raw data/*.csv
+listings*.csv
+*.sqlite
+*.gpkg
